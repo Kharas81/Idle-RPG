@@ -1,0 +1,8 @@
+{
+  "potion": {
+    "id": "potion",
+    "name": "Heiltrank",
+    "type": "consumable",
+    "effects": ["heal"]
+  }
+}

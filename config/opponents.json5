@@ -1,0 +1,8 @@
+{
+  "goblin": {
+    "id": "goblin",
+    "name": "Goblin",
+    "type": "humanoid",
+    "health": 30
+  }
+}
