@@ -7,3 +7,7 @@ class ItemType(Enum):
 class OpponentType(Enum):
     BEAST = "beast"
     HUMANOID = "humanoid"
+
+class TickMode(Enum):
+    REALTIME = "realtime"
+    SIMULATION = "simulation"

@@ -13,3 +13,8 @@ class OpponentConfig(BaseModel):
     name: str
     type: OpponentType
     health: int
+
+class MapConfig(BaseModel):
+    name: str
+    width: int
+    height: int
