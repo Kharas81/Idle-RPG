@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Idle RPG Frontend Tester</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        button { margin: 0.5em; padding: 0.5em 1em; }
+        #output { margin-top: 1em; white-space: pre; background: #f4f4f4; padding: 1em; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Idle RPG Frontend Tester</h1>
+    <label>API-URL: <input id="apiurl" value="http://localhost:8000" size="40"></label>
+    <div>
+        <button onclick="callApi('GET', '/state')">GET /state</button>
+        <button onclick="callApi('POST', '/tick')">POST /tick</button>
+        <button onclick="callApi('POST', '/reset')">POST /reset</button>
+    </div>
+    <div id="output">Wähle eine Aktion…</div>
+    <script>
+    async function callApi(method, path) {
+        const url = document.getElementById('apiurl').value + path;
+        let resp, data;
+        try {
+            resp = await fetch(url, { method });
+            data = await resp.json();
+        } catch (e) {
+            data = { error: e.toString() };
+        }
+        document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+    }
+    </script>
+</body>
+</html>
