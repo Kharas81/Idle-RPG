@@ -1,0 +1,26 @@
+[
+  {
+    id: "slime_01",
+    name: "Schleim",
+    type: "beast",
+    level: 1,
+    hp: 30,
+    attack: 5,
+    defense: 1,
+    element: "physical",
+    loot_table: ["potion_01"],
+    description: "Ein glibberiger, schwacher Gegner."
+  },
+  {
+    id: "goblin_01",
+    name: "Goblin",
+    type: "humanoid",
+    level: 2,
+    hp: 45,
+    attack: 8,
+    defense: 2,
+    element: "earth",
+    loot_table: ["sword_01"],
+    description: "Ein kleiner, listiger Goblin."
+  }
+]

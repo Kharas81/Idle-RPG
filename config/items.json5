@@ -1,0 +1,20 @@
+[
+  {
+    id: "potion_01",
+    name: "Heiltrank",
+    type: "consumable",
+    rarity: "common",
+    description: "Stellt 50 HP wieder her.",
+    value: 10,
+    effects: ["heal_50"]
+  },
+  {
+    id: "sword_01",
+    name: "Eisenschwert",
+    type: "weapon",
+    rarity: "uncommon",
+    description: "Ein einfaches Schwert aus Eisen.",
+    value: 50,
+    effects: ["atk+5"]
+  }
+]
