@@ -60,12 +60,22 @@ def test_load_items():
 
 def test_load_opponents():
     opponents = ConfigLoader.load_config("config/opponents.json5", Opponent)
-    assert len(opponents) == 6
-    goblin = opponents[0]
-    assert goblin.id == "goblin_scout"
+    # Prüfe die neue Gegneranzahl (laut GDD: 49 Einträge)
+    assert len(opponents) >= 49
+    ids = [o.id for o in opponents]
+    # Prüfe exemplarisch einige Gegner
+    assert "goblin_scout" in ids
+    goblin = next(o for o in opponents if o.id == "goblin_scout")
     assert goblin.name == "Goblin Späher"
     assert goblin.stats["atk"] == 8
     assert goblin.stats["spd"] == 12
     assert "quick_strike" in goblin.skills
     assert "basic_attack" in goblin.skills
     assert goblin.ai_policy == "Coward"
+    # Prüfe einen Gegner mit mehreren Archetypen
+    assert "orc_shaman" in ids
+    orc_shaman = next(o for o in opponents if o.id == "orc_shaman")
+    assert orc_shaman.name == "Ork-Schamane"
+    assert "role_magic_fire" in orc_shaman.archetypes
+    assert orc_shaman.stats["mana"] == 50
+    assert "skill_heal_light" in orc_shaman.skills
