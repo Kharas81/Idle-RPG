@@ -15,6 +15,19 @@
     rarity: "uncommon",
     description: "Ein einfaches Schwert aus Eisen.",
     value: 50,
-    effects: ["atk+5"]
+    effects: ["atk+5"],
+    slot: "weapon",
+    stats: { ATK: 5 }
+  },
+  {
+    id: "armor_01",
+    name: "Lederrüstung",
+    type: "armor",
+    rarity: "common",
+    description: "Einfache Rüstung aus Leder.",
+    value: 30,
+    effects: ["def+2"],
+    slot: "armor",
+    stats: { DEF: 2 }
   }
 ]

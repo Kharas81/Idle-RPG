@@ -1,11 +1,17 @@
 from enum import Enum
 
+
 class ItemType(Enum):
     WEAPON = "weapon"
     ARMOR = "armor"
     CONSUMABLE = "consumable"
     QUEST = "quest"
     RESOURCE = "resource"
+
+# Equipment-Slots für Ausrüstungssystem
+class EquipmentSlot(Enum):
+    WEAPON = "weapon"
+    ARMOR = "armor"
 
 class Rarity(Enum):
     COMMON = "common"

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Eisenschwert",
+    "inputs": [
+      {"name": "Eisenerz", "amount": 5}
+    ],
+    "outputs": [
+      {"name": "Eisenschwert", "amount": 1}
+    ]
+  }
+]

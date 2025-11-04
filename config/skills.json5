@@ -1,0 +1,22 @@
+{
+  "fireball": {
+    "name": "Feuerball",
+    "cost": 10,
+    "cooldown": 2,
+    "damage": 30,
+    "effects": [
+      {
+        "name": "Brennen",
+        "duration": 3,
+        "damage_per_tick": 5
+      }
+    ]
+  },
+  "heal": {
+    "name": "Heilung",
+    "cost": 8,
+    "cooldown": 1,
+    "heal": 25,
+    "effects": []
+  }
+}
