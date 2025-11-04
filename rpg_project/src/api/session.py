@@ -1,18 +1,20 @@
-from fastapi import APIRouter, HTTPException, Request
+from typing import Any
+
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
+
 from rpg_project.src.services.session_manager import SessionManager
-from typing import Dict, Any
 
 router = APIRouter()
 session_manager = SessionManager()
 
 class NewSessionRequest(BaseModel):
     session_id: str
-    initial_state: Dict[str, Any]
+    initial_state: dict[str, Any]
 
 class SaveSessionRequest(BaseModel):
     session_id: str
-    state: Dict[str, Any]
+    state: dict[str, Any]
 
 @router.post("/session/new")
 def new_session(req: NewSessionRequest):

@@ -13,4 +13,17 @@
   "start": [0, 0],
   "goal": [3, 0],
   "name": "Level 1"
+  ,
+  "interactables": [
+    {
+      "id": "chest_1",
+      "type": "chest",
+      "position": [2, 2],
+      "state": "closed",
+      "loot": ["gold_coin", "healing_potion"],
+      "properties": {
+        "description": "Eine alte Holztruhe. Sie sieht unverschlossen aus."
+      }
+    }
+  ]
 }

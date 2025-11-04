@@ -1,8 +1,9 @@
+
 from rpg_project.src.models.crafting import Recipe
-from typing import List, Dict, Any
+
 
 class CraftingService:
-    def __init__(self, recipes: List[Recipe]):
+    def __init__(self, recipes: list[Recipe]):
         self.recipes = {r.name: r for r in recipes}
 
     def can_craft(self, player, recipe_name: str) -> bool:

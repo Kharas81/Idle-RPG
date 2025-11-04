@@ -1,12 +1,12 @@
-import sys
 import os
-import tempfile
 import shutil
+import sys
+
 import pytest
 from fastapi.testclient import TestClient
 
 # sys.path-Anpassung für lokale Imports
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 from rpg_project.src.main import app
 
 client = TestClient(app)
@@ -14,7 +14,7 @@ client = TestClient(app)
 @pytest.fixture(scope="function", autouse=True)
 def cleanup_sessions():
     # Vor jedem Test: sessions-Verzeichnis leeren
-    sessions_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../rpg_project/sessions'))
+    sessions_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../rpg_project/sessions"))
     if os.path.exists(sessions_dir):
         shutil.rmtree(sessions_dir)
     os.makedirs(sessions_dir, exist_ok=True)

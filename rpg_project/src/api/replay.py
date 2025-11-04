@@ -1,11 +1,12 @@
+"""API für Replay- und RNG-Service: Seed setzen, Replay speichern/laden
 """
-API für Replay- und RNG-Service: Seed setzen, Replay speichern/laden
-"""
+from typing import Any
+
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from typing import List, Any
-from rpg_project.src.services.rng_service import rng_service
+
 from rpg_project.src.services.replay_service import replay_service
+from rpg_project.src.services.rng_service import rng_service
 
 router = APIRouter()
 
@@ -13,7 +14,7 @@ class SetSeedRequest(BaseModel):
     seed: int
 
 class SaveReplayRequest(BaseModel):
-    actions: List[Any]
+    actions: list[Any]
 
 @router.post("/rng/seed")
 def set_seed(req: SetSeedRequest):

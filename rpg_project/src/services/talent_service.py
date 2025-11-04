@@ -1,9 +1,8 @@
+"""TalentService: Verwaltung und Anwendung von Talenten
 """
-TalentService: Verwaltung und Anwendung von Talenten
-"""
-from typing import Dict, List
 from rpg_project.src.models.character import Character
-from rpg_project.src.models.talent import Talent, TalentTree
+from rpg_project.src.models.talent import TalentTree
+
 
 class TalentService:
     def __init__(self, talent_tree: TalentTree):

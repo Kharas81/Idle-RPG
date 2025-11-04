@@ -1,11 +1,14 @@
-"""
-Unit-Tests für BattleEngine (rundenbasierter Kampf)
+"""Unit-Tests für BattleEngine (rundenbasierter Kampf)
 """
 
-import sys, os
+import os
+import sys
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 import pytest
-from rpg_project.src.services.battle_engine import BattleStore, EntityState, BattleState
+
+from rpg_project.src.services.battle_engine import BattleState, BattleStore, EntityState
+
 
 @pytest.fixture
 def store():

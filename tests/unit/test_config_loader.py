@@ -1,9 +1,10 @@
 import sys
 from pathlib import Path
+
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from rpg_project.src.services.config_loader import ConfigLoader
 from rpg_project.src.models.core import Item, Opponent
+from rpg_project.src.services.config_loader import ConfigLoader
 
 
 def test_load_items():

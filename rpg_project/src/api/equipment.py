@@ -1,17 +1,17 @@
-"""
-API-Endpunkte für Ausrüstung: /character/equip und /character/unequip
+"""API-Endpunkte für Ausrüstung: /character/equip und /character/unequip
 """
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from rpg_project.src.services.equipment_service import EquipmentService
-from rpg_project.src.services.config_loader import ConfigLoader
+
 from rpg_project.src.models.character import Character
+from rpg_project.src.services.config_loader import ConfigLoader
+from rpg_project.src.models.core import Item
+from rpg_project.src.services.equipment_service import EquipmentService
 
 router = APIRouter()
 
-# Dummy: Session/Charakterverwaltung muss im echten System angebunden werden
-active_character = Character(name="Held", stats={"ATK": 1}, equipment={})
-items_config = {item["id"]: item for item in ConfigLoader.load_config("config/items.json5")}
+active_character = Character(id="dummychar1", name="Held", stats={"ATK": 1}, equipment={})
+items_config = {item.id: item.model_dump() for item in ConfigLoader.load_config("config/items.json5", Item)}
 equipment_service = EquipmentService(items_config)
 
 class EquipRequest(BaseModel):

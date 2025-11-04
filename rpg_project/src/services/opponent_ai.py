@@ -1,17 +1,16 @@
-"""
-OpponentAI: Gegner-KI-Logik für verschiedene Verhaltenstypen.
+"""OpponentAI: Gegner-KI-Logik für verschiedene Verhaltenstypen.
 - Entscheidet, welche Aktion ein Gegner im Kampf ausführt (z.B. Angriff, Flucht, Skill-Nutzung)
 - Liest ai_policy aus der Opponent-Config
 """
-from typing import Dict, Any
+from typing import Any
+
 
 class OpponentAI:
-    def __init__(self, ai_policy: Dict[str, Any]):
+    def __init__(self, ai_policy: dict[str, Any]):
         self.ai_policy = ai_policy
 
     def decide_action(self, opponent_state, battle_state) -> str:
-        """
-        Gibt die nächste Aktion zurück: "attack", "flee", "skill:<name>"
+        """Gibt die nächste Aktion zurück: "attack", "flee", "skill:<name>"
         """
         # Beispiel: Flucht bei niedrigem Leben
         if self.ai_policy.get("type") == "coward":

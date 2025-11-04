@@ -4,9 +4,11 @@
     name: "Heiltrank",
     type: "consumable",
     rarity: "common",
+    slot: "consumable",
     description: "Stellt 50 HP wieder her.",
     value: 10,
-    effects: ["heal_50"]
+    effects: ["heal_50"],
+    stats: {}
   },
   {
     id: "sword_01",

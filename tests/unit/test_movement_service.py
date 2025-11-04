@@ -1,9 +1,11 @@
 
 import sys
 from pathlib import Path
+
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-from rpg_project.src.models.world import WorldMap, Tile
+from rpg_project.src.models.world import Tile, WorldMap
 from rpg_project.src.services.movement_service import MovementService
+
 
 def make_test_world():
     return WorldMap(

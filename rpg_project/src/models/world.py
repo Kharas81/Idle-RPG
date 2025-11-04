@@ -1,5 +1,6 @@
+
 from pydantic import BaseModel
-from typing import List, Tuple, Optional
+
 
 class TileType(str):
     WALL = "wall"
@@ -15,7 +16,7 @@ class Tile(BaseModel):
 class WorldMap(BaseModel):
     width: int
     height: int
-    tiles: List[Tile]
-    start: Tuple[int, int]
-    goal: Tuple[int, int]
-    name: Optional[str] = None
+    tiles: list[Tile]
+    start: tuple[int, int]
+    goal: tuple[int, int]
+    name: str | None = None

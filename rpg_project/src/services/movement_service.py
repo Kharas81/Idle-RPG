@@ -1,9 +1,10 @@
-from rpg_project.src.models.world import WorldMap, Tile
-from typing import Tuple
+
+from rpg_project.src.models.world import WorldMap
+
 
 class MovementService:
     @staticmethod
-    def can_move(world: WorldMap, pos: Tuple[int, int], direction: str) -> bool:
+    def can_move(world: WorldMap, pos: tuple[int, int], direction: str) -> bool:
         dx, dy = 0, 0
         if direction == "up":
             dy = -1
@@ -26,7 +27,7 @@ class MovementService:
         return False
 
     @staticmethod
-    def move(world: WorldMap, pos: Tuple[int, int], direction: str) -> Tuple[int, int]:
+    def move(world: WorldMap, pos: tuple[int, int], direction: str) -> tuple[int, int]:
         if MovementService.can_move(world, pos, direction):
             dx, dy = 0, 0
             if direction == "up":

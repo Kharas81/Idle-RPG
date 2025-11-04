@@ -1,0 +1,18 @@
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W", "I", "N", "D", "UP", "B", "C4", "T20", "SIM", "Q"]
+ignore = []
+exclude = [".git", "__pycache__", ".mypy_cache", ".pytest_cache", ".venv", "venv", "build", "dist"]
+
+[tool.coverage.run]
+branch = true
+source = ["rpg_project/src"]
+
+[tool.coverage.report]
+omit = ["*/tests/*", "*/__init__.py"]
+show_missing = true
+skip_covered = true

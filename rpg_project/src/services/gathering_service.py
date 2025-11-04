@@ -1,13 +1,14 @@
+from typing import Any
+
 from rpg_project.src.models.resource import Resource
-from typing import Dict, Any
+
 
 class GatheringService:
-    def __init__(self, world_map: Dict[str, Any]):
+    def __init__(self, world_map: dict[str, Any]):
         self.world_map = world_map
 
     def gather(self, player, position) -> Resource:
-        """
-        Sammelt Ressource an gegebener Position, fügt sie dem Inventar hinzu.
+        """Sammelt Ressource an gegebener Position, fügt sie dem Inventar hinzu.
         Gibt die gesammelte Resource zurück oder None, falls nichts da ist.
         """
         # Position als String-Schlüssel '(x,y)'

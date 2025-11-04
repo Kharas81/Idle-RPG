@@ -1,17 +1,16 @@
-"""
-API-Endpunkt: /character/learn_talent
+"""API-Endpunkt: /character/learn_talent
 """
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from rpg_project.src.services.talent_service import TalentService
-from rpg_project.src.services.config_loader import ConfigLoader
+
 from rpg_project.src.models.character import Character
 from rpg_project.src.models.talent import Talent, TalentTree
+from rpg_project.src.services.config_loader import ConfigLoader
+from rpg_project.src.services.talent_service import TalentService
 
 router = APIRouter()
 
-# Dummy: Session/Charakterverwaltung muss im echten System angebunden werden
-active_character = Character(name="Held", stats={"ATK": 5}, equipment={})
+active_character = Character(id="dummychar2", name="Held", stats={"ATK": 5}, equipment={})
 # Lade Talente aus Config
 raw_talents = ConfigLoader.load_config("config/talents.json5", Talent)
 talent_tree = TalentTree(talents={t.id: t for t in raw_talents})

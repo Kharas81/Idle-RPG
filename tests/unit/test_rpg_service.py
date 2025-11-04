@@ -1,15 +1,17 @@
 
-import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+import sys
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 from rpg_project.src.models.character import Character
 from rpg_project.src.services.rpg_service import RPGService
 
+
 def test_on_enemy_defeated_xp_gold_levelup():
     # Arrange
-    config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../config/game_rules.json5'))
+    config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../config/game_rules.json5"))
     rpg = RPGService(config_path)
-    char = Character(name="TestHero")
+    char = Character(id="testchar4", name="TestHero")
     # Simuliere: Gegner gibt 120 XP, 50 Gold, 1 Loot
     event_data = {"xp": 120, "gold": 50, "loot": [{"item_id": "potion", "qty": 1}]}
     # Act
@@ -34,9 +36,9 @@ def test_on_enemy_defeated_xp_gold_levelup():
 
 
 def test_no_levelup_if_xp_too_low():
-    config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../config/game_rules.json5'))
+    config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../config/game_rules.json5"))
     rpg = RPGService(config_path)
-    char = Character(name="LowXP")
+    char = Character(id="testchar5", name="LowXP")
     event_data = {"xp": 50, "gold": 5, "loot": []}
     char = rpg.handle_event("ON_ENEMY_DEFEATED", char, event_data)
     assert char.level == 1

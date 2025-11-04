@@ -1,13 +1,9 @@
+"""API für BattleEngine: Stellt Endpunkte für Kampfstart, Kampfschritt und Statusabfrage bereit.
 """
-API für BattleEngine: Stellt Endpunkte für Kampfstart, Kampfschritt und Statusabfrage bereit.
-"""
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel
 
-
-from fastapi import Depends, Query
-from rpg_project.src.services.battle_engine import BattleStore, EntityState, BattleStatus
-
+from rpg_project.src.services.battle_engine import BattleStatus, BattleStore, EntityState
 
 router = APIRouter()
 battle_store = BattleStore()

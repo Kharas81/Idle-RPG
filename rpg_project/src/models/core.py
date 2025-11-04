@@ -1,15 +1,18 @@
-from pydantic import BaseModel, Field
-from typing import List, Optional
-from .enums import ItemType, Rarity, OpponentType, Element
+
+from pydantic import BaseModel
+
+from .enums import Element, ItemType, OpponentType, Rarity
+
 
 class Item(BaseModel):
     id: str
     name: str
     type: ItemType
     rarity: Rarity
-    description: Optional[str] = None
+    slot: str  # z.B. "weapon", "armor", "ring"
+    description: str | None = None
     value: int = 0
-    effects: Optional[List[str]] = None
+    effects: list[str] | None = None
 
 class Opponent(BaseModel):
     id: str
@@ -20,5 +23,5 @@ class Opponent(BaseModel):
     attack: int
     defense: int
     element: Element = Element.PHYSICAL
-    loot_table: Optional[List[str]] = None
-    description: Optional[str] = None
+    loot_table: list[str] | None = None
+    description: str | None = None

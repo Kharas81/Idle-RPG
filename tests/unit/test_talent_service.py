@@ -1,10 +1,11 @@
-"""
-Unit-Tests für TalentService
+"""Unit-Tests für TalentService
 """
 import pytest
-from rpg_project.src.services.talent_service import TalentService
+
 from rpg_project.src.models.character import Character
 from rpg_project.src.models.talent import Talent, TalentEffect, TalentTree
+from rpg_project.src.services.talent_service import TalentService
+
 
 @pytest.fixture
 def fire_mastery_talent():
@@ -35,7 +36,7 @@ def talent_tree(fire_mastery_talent, strength_training_talent):
 
 @pytest.fixture
 def character():
-    return Character(name="Held", stats={"ATK": 5}, equipment={})
+    return Character(id="testchar2", name="Held", stats={"ATK": 5}, equipment={})
 
 def test_learn_stat_bonus_talent(talent_tree, character):
     service = TalentService(talent_tree)
@@ -60,7 +61,7 @@ def test_cannot_learn_without_prerequisite():
     t1 = Talent(id="t1", name="A", description="", effects=[], prerequisites=[])
     t2 = Talent(id="t2", name="B", description="", effects=[], prerequisites=["t1"])
     tree = TalentTree(talents={"t1": t1, "t2": t2})
-    char = Character(name="Held", stats={}, equipment={})
+    char = Character(id="testchar3", name="Held", stats={}, equipment={})
     service = TalentService(tree)
     assert not service.learn_talent(char, "t2")
     assert service.learn_talent(char, "t1")

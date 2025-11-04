@@ -1,6 +1,7 @@
 
 # FastAPI-App und API-Router für Battle-API
 from fastapi import FastAPI
+
 from rpg_project.src.api import router as api_router
 
 app = FastAPI()
@@ -8,7 +9,7 @@ app.include_router(api_router)
 
 # Optional: GameLoop als Funktion erhalten
 def run_gameloop():
-    from rpg_project.src.models.world import WorldMap, Tile
+    from rpg_project.src.models.world import Tile, WorldMap
     from rpg_project.src.services.movement_service import MovementService
     world = WorldMap(
         width=5,

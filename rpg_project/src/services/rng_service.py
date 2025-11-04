@@ -1,8 +1,7 @@
-"""
-RNGService: Zentraler Zufallszahlengenerator mit Seed für 100% reproduzierbare Runs.
+"""RNGService: Zentraler Zufallszahlengenerator mit Seed für 100% reproduzierbare Runs.
 """
 import random
-from typing import Optional
+
 
 class RNGService:
     _instance = None
@@ -24,7 +23,7 @@ class RNGService:
     def random(self) -> float:
         return self._rng.random()
 
-    def get_seed(self) -> Optional[int]:
+    def get_seed(self) -> int | None:
         return self._seed
 
     def reset(self):

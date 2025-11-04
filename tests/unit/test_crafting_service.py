@@ -1,9 +1,13 @@
-import sys, os
+import os
+import sys
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
-import pytest
 import json5
-from rpg_project.src.services.crafting_service import CraftingService
+import pytest
+
 from rpg_project.src.models.crafting import Recipe
+from rpg_project.src.services.crafting_service import CraftingService
+
 
 class DummyPlayer:
     def __init__(self, inventory):
@@ -11,7 +15,7 @@ class DummyPlayer:
 
 @pytest.fixture
 def recipes():
-    with open("config/recipes.json5", "r", encoding="utf-8") as f:
+    with open("config/recipes.json5", encoding="utf-8") as f:
         data = json5.load(f)
     return [Recipe(**r) for r in data]
 

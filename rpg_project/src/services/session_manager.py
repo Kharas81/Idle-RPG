@@ -1,16 +1,17 @@
-import os
 import json
-from typing import Any, Dict, Optional
+import os
 from threading import Lock
+from typing import Any
+
 
 class SessionManager:
-    """
-    Verwaltet das Speichern und Laden von Spielständen (Sessions).
+    """Verwaltet das Speichern und Laden von Spielständen (Sessions).
     Speichert pro Session eine JSON-Datei im Verzeichnis 'sessions/'.
     """
+
     _instance = None
     _lock = Lock()
-    SESSIONS_DIR = os.path.join(os.path.dirname(__file__), '../../../sessions')
+    SESSIONS_DIR = os.path.join(os.path.dirname(__file__), "../../../sessions")
 
     def __new__(cls):
         with cls._lock:
@@ -19,24 +20,24 @@ class SessionManager:
                 os.makedirs(cls.SESSIONS_DIR, exist_ok=True)
             return cls._instance
 
-    def new_session(self, session_id: str, initial_state: Dict[str, Any]) -> None:
+    def new_session(self, session_id: str, initial_state: dict[str, Any]) -> None:
         """Erzeugt eine neue Session mit Startzustand."""
         path = self._get_session_path(session_id)
-        with open(path, 'w', encoding='utf-8') as f:
+        with open(path, "w", encoding="utf-8") as f:
             json.dump(initial_state, f, ensure_ascii=False, indent=2)
 
-    def save_session(self, session_id: str, state: Dict[str, Any]) -> None:
+    def save_session(self, session_id: str, state: dict[str, Any]) -> None:
         """Speichert den aktuellen Zustand der Session."""
         path = self._get_session_path(session_id)
-        with open(path, 'w', encoding='utf-8') as f:
+        with open(path, "w", encoding="utf-8") as f:
             json.dump(state, f, ensure_ascii=False, indent=2)
 
-    def load_session(self, session_id: str) -> Optional[Dict[str, Any]]:
+    def load_session(self, session_id: str) -> dict[str, Any] | None:
         """Lädt den Zustand der Session. Gibt None zurück, falls nicht vorhanden."""
         path = self._get_session_path(session_id)
         if not os.path.exists(path):
             return None
-        with open(path, 'r', encoding='utf-8') as f:
+        with open(path, encoding="utf-8") as f:
             return json.load(f)
 
     def _get_session_path(self, session_id: str) -> str:

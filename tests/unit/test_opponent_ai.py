@@ -1,10 +1,13 @@
+"""Unit-Tests für OpponentAI (Gegner-KI)
 """
-Unit-Tests für OpponentAI (Gegner-KI)
-"""
-import sys, os
+import os
+import sys
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 import pytest
+
 from rpg_project.src.services.opponent_ai import OpponentAI
+
 
 class DummyState:
     def __init__(self, hp, max_hp):

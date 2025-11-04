@@ -1,14 +1,15 @@
-"""
-Integrationstest für Battle-API (FastAPI)
+"""Integrationstest für Battle-API (FastAPI)
 """
 
-import sys, os
+import os
+import sys
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 import pytest
-from fastapi.testclient import TestClient
-from rpg_project.src.api.battle import router
-from rpg_project.src.services.battle_engine import EntityState
 from fastapi import FastAPI
+from fastapi.testclient import TestClient
+
+from rpg_project.src.api.battle import router
 
 app = FastAPI()
 app.include_router(router)

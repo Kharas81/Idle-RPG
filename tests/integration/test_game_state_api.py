@@ -1,12 +1,14 @@
+"""Integrationstest für GameState-API (Sprint S4)
 """
-Integrationstest für GameState-API (Sprint S4)
-"""
-import sys, os
+import os
+import sys
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 import pytest
-from fastapi.testclient import TestClient
-from rpg_project.src.api.game_state import router
 from fastapi import FastAPI
+from fastapi.testclient import TestClient
+
+from rpg_project.src.api.game_state import router
 
 app = FastAPI()
 app.include_router(router)

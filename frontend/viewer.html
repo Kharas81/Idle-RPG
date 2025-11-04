@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Idle RPG – Web-Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="viewer.css">
+    <style>
+        body { font-family: sans-serif; background: #222; color: #eee; }
+        #game-container { margin: 2em auto; width: max-content; background: #333; padding: 1em; border-radius: 8px; box-shadow: 0 0 16px #0008; }
+        #map { font-size: 2rem; line-height: 2.2rem; letter-spacing: 0.2rem; background: #222; padding: 1em; border-radius: 6px; }
+        #legend { margin-top: 1em; }
+        .legend-emoji { font-size: 1.5rem; }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Idle RPG – Web-Viewer</h1>
+        <div id="map">Lade Karte…</div>
+        <div id="legend">
+            <strong>Legende:</strong>
+            <span class="legend-emoji">🧑</span> Spieler
+            <span class="legend-emoji">👾</span> Gegner
+            <span class="legend-emoji">🟫</span> Wand
+            <span class="legend-emoji">💰</span> Truhe
+            <span class="legend-emoji">⬜</span> Boden
+            <span class="legend-emoji">🚪</span> Ziel
+        </div>
+    </div>
+    <script src="viewer.js"></script>
+</body>
+</html>

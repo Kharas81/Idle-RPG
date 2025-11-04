@@ -1,5 +1,6 @@
+
 from pydantic import BaseModel
-from typing import List
+
 
 class CraftingInput(BaseModel):
     name: str
@@ -11,5 +12,5 @@ class CraftingOutput(BaseModel):
 
 class Recipe(BaseModel):
     name: str
-    inputs: List[CraftingInput]
-    outputs: List[CraftingOutput]
+    inputs: list[CraftingInput]
+    outputs: list[CraftingOutput]

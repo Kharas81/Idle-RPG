@@ -1,19 +1,18 @@
-"""
-BattleEngine: Service für rundenbasierte Kämpfe zwischen zwei Entitäten.
+"""BattleEngine: Service für rundenbasierte Kämpfe zwischen zwei Entitäten.
 - Startet einen Kampf
 - Führt Kampfschritte aus
 - Gibt den aktuellen Kampfstatus zurück
 
 Alle Werte werden aus den Konfigurationsdateien geladen (datengetriebenes Design).
 """
-from typing import Optional, Dict, Any, List
-from pydantic import BaseModel
-from rpg_project.src.models.core import Opponent, Item
 from enum import Enum
+from pathlib import Path
 
 import json5
-from pathlib import Path
+from pydantic import BaseModel
+
 from rpg_project.src.models.effects import Effect
+
 
 class BattleState(str, Enum):
     NOT_STARTED = "not_started"
@@ -28,7 +27,7 @@ class EntityState(BaseModel):
     atk: int
     defense: int
     is_player: bool
-    effects: List[Effect] = []  # Aktive Effekte
+    effects: list[Effect] = []  # Aktive Effekte
     mana: int = 100  # Für Skillkosten
 
 class BattleStatus(BaseModel):
@@ -36,10 +35,10 @@ class BattleStatus(BaseModel):
     turn: int
     attacker: str
     defender: str
-    entities: Dict[str, EntityState]
-    winner: Optional[str] = None
+    entities: dict[str, EntityState]
+    winner: str | None = None
 
-    cooldowns: Dict[str, Dict[str, int]] = {}  # cooldowns[entity_id][skill_name] = turns
+    cooldowns: dict[str, dict[str, int]] = {}  # cooldowns[entity_id][skill_name] = turns
 
 
 # Einfacher In-Memory-BattleStore für Demo/Test
@@ -154,5 +153,5 @@ class BattleStore:
         self._battles[battle_id] = battle
         return battle
 
-    def get_state(self, battle_id: str) -> Optional[BattleStatus]:
+    def get_state(self, battle_id: str) -> BattleStatus | None:
         return self._battles.get(battle_id)
