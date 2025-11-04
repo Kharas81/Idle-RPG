@@ -48,14 +48,18 @@ from rpg_project.src.services.config_loader import ConfigLoader
 
 def test_load_items():
     items = ConfigLoader.load_config("config/items.json5", Item)
-    assert len(items) == 3
+    # GDD 2: Es gibt 20 Consumables
+    assert len(items) == 21
+    ids = [item.id for item in items]
     names = [item.name for item in items]
+    # Prüfe exemplarisch einige GDD-Items
+    assert "potion_heal_small" in ids
+    assert "Kleiner Heiltrank" in names
+    assert "bomb_iron" in ids
+    assert "Eisenbombe" in names
+    assert "scroll_teleport_town" in ids
+    assert "Schriftrolle: Stadtrückkehr" in names
     types = [item.type.value for item in items]
-    assert "Heiltrank" in names
-    assert "Eisenschwert" in names
-    assert "Lederrüstung" in names
-    assert "weapon" in types
-    assert "armor" in types
     assert "consumable" in types
 
 def test_load_opponents():

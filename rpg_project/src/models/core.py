@@ -4,14 +4,21 @@ from pydantic import BaseModel
 from .enums import Element, ItemType, OpponentType, Rarity
 
 
+
 class Item(BaseModel):
     id: str
     name: str
     type: ItemType
-    rarity: Rarity
-    slot: str  # z.B. "weapon", "armor", "ring"
+    rarity: Rarity | None = None
+    slot: str | None = None  # z.B. "WEAPON", "ARMOR", "CONSUMABLE", "RESOURCE"
     description: str | None = None
-    value: int = 0
+    value_gold: int | None = None
+    max_stack: int | None = None
+    icon_id: str | None = None
+    effect: dict | None = None  # Für Consumables
+    stats_bonus: dict | None = None  # Für Equipment
+    # Für Kompatibilität mit alter Struktur
+    value: int | None = None
     effects: list[str] | None = None
 
 class Opponent(BaseModel):
