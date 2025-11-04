@@ -8,9 +8,15 @@ from rpg_project.src.models.core import Item, Opponent
 
 def test_load_items():
     items = ConfigLoader.load_config("config/items.json5", Item)
-    assert len(items) == 2
-    assert items[0].name == "Heiltrank"
-    assert items[1].type.value == "weapon"
+    assert len(items) == 3
+    names = [item.name for item in items]
+    types = [item.type.value for item in items]
+    assert "Heiltrank" in names
+    assert "Eisenschwert" in names
+    assert "Lederrüstung" in names
+    assert "weapon" in types
+    assert "armor" in types
+    assert "consumable" in types
 
 def test_load_opponents():
     opponents = ConfigLoader.load_config("config/opponents.json5", Opponent)

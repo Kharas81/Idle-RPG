@@ -1,0 +1,32 @@
+// config/talents.json5
+// Beispiel-Talente für den Talentbaum
+{
+  "fire_mastery": {
+    "id": "fire_mastery",
+    "name": "Feuermagie-Meisterschaft",
+    "description": "+10% Feuerschaden für alle Feuer-Skills.",
+    "effects": [
+      {
+        "effect_type": "percent_bonus",
+        "target": "fire",
+        "value": 0.1,
+        "description": "+10% Feuerschaden"
+      }
+    ],
+    "prerequisites": []
+  },
+  "strength_training": {
+    "id": "strength_training",
+    "name": "Krafttraining",
+    "description": "+2 Angriff.",
+    "effects": [
+      {
+        "effect_type": "stat_bonus",
+        "target": "ATK",
+        "value": 2,
+        "description": "+2 Angriff"
+      }
+    ],
+    "prerequisites": []
+  }
+}
