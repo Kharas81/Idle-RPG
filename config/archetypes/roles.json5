@@ -1,0 +1,24 @@
+{
+  "role_magic_light": {
+    "stats": { "hp": "+10", "def": "-1", "mana": 50 },
+    "skills": ["skill_heal_light"]
+  },
+  "role_magic_fire": {
+    "stats": { "mana": 50 },
+    "skills": ["skill_fireball"]
+  },
+  "role_magic_ice": {
+    "stats": { "mana": 50 },
+    "skills": ["skill_ice_arrow"]
+  },
+  "role_ranged": {
+    "stats": { "atk": "-1", "spd": "+2" },
+    "skills": ["skill_arrow_shot"],
+    "ai_policy": "Aggressive_Ranged"
+  },
+  "role_tank": {
+    "stats": { "hp": "+50", "def": "+10", "atk": "-2" },
+    "skills": ["skill_taunt"],
+    "ai_policy": "Aggressive_Tank"
+  }
+}

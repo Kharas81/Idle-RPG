@@ -1,26 +1,54 @@
 [
   {
-    id: "slime_01",
-    name: "Schleim",
-    type: "beast",
-    level: 1,
-    hp: 30,
-    attack: 5,
-    defense: 1,
-    element: "physical",
-    loot_table: ["potion_01"],
-    description: "Ein glibberiger, schwacher Gegner."
+  "id": "goblin_scout",
+  "name": "Goblin Späher",
+  "archetypes": ["base_goblin"],
+  "stats": { "atk": 8, "spd": 12 },
+  "skills": ["quick_strike"],
+  "ai_policy": "Coward",
+  "xp": 10
   },
   {
-    id: "goblin_01",
-    name: "Goblin",
-    type: "humanoid",
-    level: 2,
-    hp: 45,
-    attack: 8,
-    defense: 2,
-    element: "earth",
-    loot_table: ["sword_01"],
-    description: "Ein kleiner, listiger Goblin."
+    "id": "goblin_shaman",
+    "name": "Goblin-Schamane",
+    "archetypes": ["base_goblin", "role_magic_light"],
+    "stats": { "hp": 40, "def": 4 },
+    "ai_policy": "Healer",
+    "xp": 15
+  },
+  {
+    "id": "goblin_archer",
+    "name": "Goblin-Bogenschütze",
+    "archetypes": ["base_goblin", "role_ranged"],
+    "stats": { "atk": 7 },
+    "ai_policy": "Aggressive_Ranged",
+    "xp": 12
+  },
+  {
+    "id": "goblin_trapper",
+    "name": "Goblin-Fallensteller",
+    "archetypes": ["base_goblin"],
+    "stats": { "def": 5, "spd": 10 },
+    "skills": ["skill_throw_net"],
+    "ai_policy": "Saboteur_Stun",
+    "xp": 13
+  },
+  {
+    "id": "goblin_berserker",
+    "name": "Goblin-Berserker",
+    "archetypes": ["base_goblin"],
+    "stats": { "hp": 50, "atk": 10, "def": 1 },
+    "skills": ["skill_berserk_rage"],
+    "ai_policy": "Aggressive_LowHP",
+    "xp": 18
+  },
+  {
+    "id": "goblin_horde_leader",
+    "name": "Goblin-Hordenführer",
+    "archetypes": ["base_goblin"],
+    "stats": { "hp": 80, "atk": 8, "def": 5 },
+    "skills": ["skill_war_cry"],
+    "ai_policy": "Support_Buffer",
+    "xp": 30
   }
 ]

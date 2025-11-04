@@ -1,0 +1,49 @@
+{
+  "base_goblin": {
+    "stats": { "hp": 30, "atk": 5, "def": 3, "spd": 8 },
+    "faction": "goblins",
+    "skills": ["basic_attack"],
+    "loot_table_id": "lt_goblin_base"
+  },
+  "base_orc": {
+    "stats": { "hp": 80, "atk": 12, "def": 6, "spd": 5 },
+    "faction": "orcs",
+    "skills": ["basic_attack", "heavy_smash"],
+    "loot_table_id": "lt_orc_base"
+  },
+  "base_undead": {
+    "stats": { "hp": 50, "atk": 8, "def": 5, "spd": 6 },
+    "faction": "undead",
+    "skills": ["basic_attack"],
+    "loot_table_id": "lt_undead_base",
+    "special": ["Immun: Gift", "Bluten", "Schwach: Feuer"]
+  },
+  "base_beast": {
+    "stats": { "hp": 40, "atk": 10, "def": 4, "spd": 12 },
+    "faction": "beasts",
+    "skills": ["basic_attack"],
+    "loot_table_id": "lt_beast_base"
+  },
+  "base_construct": {
+    "stats": { "hp": 100, "atk": 15, "def": 15, "spd": 3 },
+    "faction": "constructs",
+    "skills": ["heavy_smash"],
+    "loot_table_id": "lt_construct_base",
+    "special": ["Immun: Gift", "Bluten", "Stun"]
+  },
+  "base_bandit": {
+    "stats": { "hp": 60, "atk": 7, "def": 5, "spd": 9 },
+    "faction": "bandits",
+    "skills": ["basic_attack"],
+    "loot_table_id": "lt_bandit_base"
+  },
+  "base_harpy": {
+    "stats": { "hp": 50, "atk": 8, "def": 4, "spd": 15 },
+    "faction": "harpyien",
+    "skills": ["basic_attack"],
+    "loot_table_id": "lt_harpy_base"
+  },
+  "base_elemental": {
+    "stats": { "hp": 70, "atk": 10, "def": 10, "spd": 7 }
+  }
+}
