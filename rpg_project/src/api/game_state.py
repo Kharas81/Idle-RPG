@@ -1,25 +1,12 @@
 from fastapi import APIRouter, Query
-from pydantic import BaseModel
-from typing import Optional
 from rpg_project.src.services.movement_service import MovementService
 from rpg_project.src.services.battle_engine import BattleStore, EntityState
 from rpg_project.src.models.world import Tile, WorldMap
+from rpg_project.src.api.game_state_models import Entity, GameState
 
 router = APIRouter()
 
-class Entity(BaseModel):
-    type: str
-    x: int
-    y: int
-
-class GameState(BaseModel):
-    tick: int
-    message: str
-    width: int
-    height: int
-    tiles: list
-    entities: list
-    inventory: list = []
+from rpg_project.src.api.game_state_models import Entity, GameState
 
 game_state = {
     "tick": 0,
@@ -61,36 +48,8 @@ game_state = {
     "inventory": []
 }
 
-def get_worldmap_from_state(state):
-    tiles = [Tile(**t) for t in state["tiles"]]
-    goal_tile = next((t for t in tiles if t.type == "goal"), None)
-    goal = (goal_tile.x, goal_tile.y) if goal_tile else (0, 0)
-    return WorldMap(width=state["width"], height=state["height"], tiles=tiles, start=(0,0), goal=goal)
+from rpg_project.src.api.game_state_utils import get_worldmap_from_state, get_player_pos, set_player_pos
 
-def get_player_pos(state):
-    for ent in state["entities"]:
-        if ent["type"] == "player":
-            return (ent["x"], ent["y"])
-    return (0,0)
-
-def set_player_pos(state, pos):
-    for ent in state["entities"]:
-        if ent["type"] == "player":
-            ent["x"], ent["y"] = pos
-            break
-
-# Bewegung
-@router.post("/move", response_model=GameState)
-def move_player(direction: str = Query(..., description="Richtung: up/down/left/right")):
-    world = get_worldmap_from_state(game_state)
-    pos = get_player_pos(game_state)
-    new_pos = MovementService.move(world, pos, direction)
-    if new_pos != pos:
-        set_player_pos(game_state, new_pos)
-        game_state["message"] = f"Spieler bewegt sich {direction}."
-    else:
-        game_state["message"] = f"Bewegung {direction} nicht möglich."
-    return GameState(**game_state)
 
 # Kampf
 battle_store = BattleStore()
@@ -125,39 +84,6 @@ def do_battle():
             ent["hp"] = status.entities["player"].hp
         if ent["type"] == "opponent":
             ent["hp"] = status.entities["opponent"].hp
-    game_state["message"] = f"Kampf ausgeführt: {status.state}"
-    return {"battle": status.dict(), "game_state": GameState(**game_state).dict()}
-
-# Inventar
-@router.post("/pickup", response_model=GameState)
-def pickup_item():
-    player_pos = get_player_pos(game_state)
-    chest = next((e for e in game_state["entities"] if e["type"] == "chest"), None)
-    if chest and (chest["x"], chest["y"]) == player_pos:
-        item = {"item_id": "potion", "qty": 1}
-        game_state["inventory"].append(item)
-        game_state["message"] = "Item aufgenommen: potion"
-        game_state["entities"] = [e for e in game_state["entities"] if e["type"] != "chest"]
-    else:
-        game_state["message"] = "Keine Kiste am Spieler-Standort."
-    return GameState(**game_state)
-
-# State, Tick, Reset
-@router.get("/state", response_model=GameState)
-def get_state():
-    return GameState(**game_state)
-
-@router.post("/tick", response_model=GameState)
-def do_tick():
-    game_state["tick"] += 1
-    game_state["message"] = f"Tick {game_state['tick']} ausgeführt."
-    return GameState(**game_state)
-
-@router.post("/reset", response_model=GameState)
-def do_reset():
-    game_state["tick"] = 0
-    game_state["message"] = "Zurückgesetzt."
-    return GameState(**game_state)
 """GameState-API: Stellt Endpunkte für Spielzustand, Tick und Reset bereit.
 """
 
