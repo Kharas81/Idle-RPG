@@ -16,6 +16,8 @@
         .inv-table { border-collapse: collapse; margin-top: 1em; }
         .inv-table th, .inv-table td { border: 1px solid #ccc; padding: 4px 8px; }
         .inv-table th { background: #eee; }
+        .map-table { border-collapse: collapse; margin-top: 1em; }
+        .map-table td { width: 32px; height: 32px; text-align: center; border: 1px solid #bbb; font-size: 1.2em; }
     </style>
 </head>
 <body>
@@ -31,6 +33,7 @@
         <button onclick="callApi('POST', '/reset')">Spiel zurücksetzen</button>
     </div>
     <div class="section" id="gameinfo"></div>
+    <div class="section" id="gamemap"></div>
     <div id="output">Wähle eine Aktion…</div>
     <script>
     async function callApi(method, path) {
@@ -41,10 +44,12 @@
             data = await resp.json();
             setStatus(true);
             showGameInfo(data);
+            showGameMap(data);
         } catch (e) {
             data = { error: e.toString() };
             setStatus(false);
             showGameInfo(null);
+            showGameMap(null);
         }
         document.getElementById('output').textContent = JSON.stringify(data, null, 2);
     }
@@ -57,12 +62,15 @@
             if (ok) {
                 const data = await resp.json();
                 showGameInfo(data);
+                showGameMap(data);
             } else {
                 showGameInfo(null);
+                showGameMap(null);
             }
         } catch (e) {
             ok = false;
             showGameInfo(null);
+            showGameMap(null);
         }
         setStatus(ok);
     }
@@ -99,6 +107,48 @@
             }
             html += '</table></div>';
         }
+        box.innerHTML = html;
+    }
+    function showGameMap(data) {
+        const box = document.getElementById('gamemap');
+        if (!data || !data.tiles || !data.width || !data.height) {
+            box.innerHTML = '';
+            return;
+        }
+        // Map als 2D-Array aufbauen
+        const map = Array.from({length: data.height}, () => Array(data.width).fill(''));
+        for (const tile of data.tiles) {
+            let symbol = '';
+            switch(tile.type) {
+                case 'start': symbol = 'S'; break;
+                case 'goal': symbol = 'G'; break;
+                case 'wall': symbol = '■'; break;
+                case 'floor': symbol = ''; break;
+                default: symbol = '?';
+            }
+            map[tile.y][tile.x] = symbol;
+        }
+        // Entities auf die Map legen
+        if (data.entities && Array.isArray(data.entities)) {
+            for (const ent of data.entities) {
+                let symbol = '';
+                if (ent.type === 'player') symbol = '🧑';
+                else if (ent.type === 'opponent') symbol = '👾';
+                else if (ent.type === 'chest') symbol = '💰';
+                else symbol = '●';
+                map[ent.y][ent.x] = symbol;
+            }
+        }
+        // Map als Tabelle rendern
+        let html = '<b>Map</b><table class="map-table">';
+        for (let y = 0; y < data.height; y++) {
+            html += '<tr>';
+            for (let x = 0; x < data.width; x++) {
+                html += `<td>${map[y][x]}</td>`;
+            }
+            html += '</tr>';
+        }
+        html += '</table>';
         box.innerHTML = html;
     }
     window.onload = checkApiStatus;
