@@ -1,0 +1,1844 @@
+// Backup der vollständigen Item-Datenbank vom 2025-11-05
+// Originalinhalt aus items.json5
+{
+  "iron_sword": {
+    "id": "iron_sword",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_2": {
+    "id": "iron_sword_2",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_3": {
+    "id": "iron_sword_3",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_4": {
+    "id": "iron_sword_4",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_5": {
+    "id": "iron_sword_5",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_6": {
+    "id": "iron_sword_6",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_7": {
+    "id": "iron_sword_7",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_8": {
+    "id": "iron_sword_8",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_9": {
+    "id": "iron_sword_9",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_10": {
+    "id": "iron_sword_10",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_11": {
+    "id": "iron_sword_11",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_12": {
+    "id": "iron_sword_12",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_13": {
+    "id": "iron_sword_13",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_14": {
+    "id": "iron_sword_14",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_15": {
+    "id": "iron_sword_15",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_16": {
+    "id": "iron_sword_16",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_17": {
+    "id": "iron_sword_17",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_18": {
+    "id": "iron_sword_18",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_19": {
+    "id": "iron_sword_19",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_20": {
+    "id": "iron_sword_20",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_21": {
+    "id": "iron_sword_21",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_22": {
+    "id": "iron_sword_22",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_23": {
+    "id": "iron_sword_23",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_24": {
+    "id": "iron_sword_24",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_25": {
+    "id": "iron_sword_25",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_26": {
+    "id": "iron_sword_26",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_27": {
+    "id": "iron_sword_27",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_28": {
+    "id": "iron_sword_28",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_29": {
+    "id": "iron_sword_29",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_30": {
+    "id": "iron_sword_30",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_31": {
+    "id": "iron_sword_31",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_32": {
+    "id": "iron_sword_32",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_33": {
+    "id": "iron_sword_33",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_34": {
+    "id": "iron_sword_34",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_35": {
+    "id": "iron_sword_35",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_36": {
+    "id": "iron_sword_36",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_37": {
+    "id": "iron_sword_37",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_38": {
+    "id": "iron_sword_38",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_39": {
+    "id": "iron_sword_39",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_40": {
+    "id": "iron_sword_40",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_41": {
+    "id": "iron_sword_41",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_42": {
+    "id": "iron_sword_42",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_43": {
+    "id": "iron_sword_43",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_44": {
+    "id": "iron_sword_44",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_45": {
+    "id": "iron_sword_45",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_46": {
+    "id": "iron_sword_46",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_47": {
+    "id": "iron_sword_47",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_48": {
+    "id": "iron_sword_48",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_49": {
+    "id": "iron_sword_49",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_50": {
+    "id": "iron_sword_50",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_51": {
+    "id": "iron_sword_51",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_52": {
+    "id": "iron_sword_52",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_53": {
+    "id": "iron_sword_53",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_54": {
+    "id": "iron_sword_54",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_55": {
+    "id": "iron_sword_55",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_56": {
+    "id": "iron_sword_56",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_57": {
+    "id": "iron_sword_57",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_58": {
+    "id": "iron_sword_58",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_59": {
+    "id": "iron_sword_59",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_60": {
+    "id": "iron_sword_60",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_61": {
+    "id": "iron_sword_61",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_62": {
+    "id": "iron_sword_62",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_63": {
+    "id": "iron_sword_63",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_64": {
+    "id": "iron_sword_64",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_65": {
+    "id": "iron_sword_65",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_66": {
+    "id": "iron_sword_66",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_67": {
+    "id": "iron_sword_67",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_68": {
+    "id": "iron_sword_68",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_69": {
+    "id": "iron_sword_69",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_70": {
+    "id": "iron_sword_70",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_71": {
+    "id": "iron_sword_71",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_72": {
+    "id": "iron_sword_72",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_73": {
+    "id": "iron_sword_73",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_74": {
+    "id": "iron_sword_74",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_75": {
+    "id": "iron_sword_75",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_76": {
+    "id": "iron_sword_76",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_77": {
+    "id": "iron_sword_77",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_78": {
+    "id": "iron_sword_78",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_79": {
+    "id": "iron_sword_79",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_80": {
+    "id": "iron_sword_80",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_81": {
+    "id": "iron_sword_81",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_82": {
+    "id": "iron_sword_82",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_83": {
+    "id": "iron_sword_83",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_84": {
+    "id": "iron_sword_84",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_85": {
+    "id": "iron_sword_85",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_86": {
+    "id": "iron_sword_86",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_87": {
+    "id": "iron_sword_87",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_88": {
+    "id": "iron_sword_88",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_89": {
+    "id": "iron_sword_89",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_90": {
+    "id": "iron_sword_90",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_91": {
+    "id": "iron_sword_91",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_92": {
+    "id": "iron_sword_92",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_93": {
+    "id": "iron_sword_93",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_94": {
+    "id": "iron_sword_94",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_95": {
+    "id": "iron_sword_95",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_96": {
+    "id": "iron_sword_96",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_97": {
+    "id": "iron_sword_97",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_98": {
+    "id": "iron_sword_98",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_99": {
+    "id": "iron_sword_99",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_100": {
+    "id": "iron_sword_100",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_101": {
+    "id": "iron_sword_101",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_102": {
+    "id": "iron_sword_102",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_103": {
+    "id": "iron_sword_103",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_104": {
+    "id": "iron_sword_104",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_105": {
+    "id": "iron_sword_105",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_106": {
+    "id": "iron_sword_106",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_107": {
+    "id": "iron_sword_107",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_108": {
+    "id": "iron_sword_108",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_109": {
+    "id": "iron_sword_109",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_110": {
+    "id": "iron_sword_110",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_111": {
+    "id": "iron_sword_111",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_112": {
+    "id": "iron_sword_112",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_113": {
+    "id": "iron_sword_113",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_114": {
+    "id": "iron_sword_114",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_115": {
+    "id": "iron_sword_115",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_116": {
+    "id": "iron_sword_116",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_117": {
+    "id": "iron_sword_117",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_118": {
+    "id": "iron_sword_118",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_119": {
+    "id": "iron_sword_119",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_120": {
+    "id": "iron_sword_120",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_121": {
+    "id": "iron_sword_121",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_122": {
+    "id": "iron_sword_122",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_123": {
+    "id": "iron_sword_123",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_124": {
+    "id": "iron_sword_124",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_125": {
+    "id": "iron_sword_125",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_126": {
+    "id": "iron_sword_126",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_127": {
+    "id": "iron_sword_127",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_128": {
+    "id": "iron_sword_128",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_129": {
+    "id": "iron_sword_129",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_130": {
+    "id": "iron_sword_130",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_131": {
+    "id": "iron_sword_131",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_132": {
+    "id": "iron_sword_132",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_133": {
+    "id": "iron_sword_133",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_134": {
+    "id": "iron_sword_134",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_135": {
+    "id": "iron_sword_135",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_136": {
+    "id": "iron_sword_136",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_137": {
+    "id": "iron_sword_137",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_138": {
+    "id": "iron_sword_138",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_139": {
+    "id": "iron_sword_139",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_140": {
+    "id": "iron_sword_140",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_141": {
+    "id": "iron_sword_141",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_142": {
+    "id": "iron_sword_142",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_143": {
+    "id": "iron_sword_143",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_144": {
+    "id": "iron_sword_144",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_145": {
+    "id": "iron_sword_145",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_146": {
+    "id": "iron_sword_146",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_147": {
+    "id": "iron_sword_147",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_148": {
+    "id": "iron_sword_148",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_149": {
+    "id": "iron_sword_149",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_150": {
+    "id": "iron_sword_150",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_151": {
+    "id": "iron_sword_151",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_152": {
+    "id": "iron_sword_152",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_153": {
+    "id": "iron_sword_153",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_154": {
+    "id": "iron_sword_154",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_155": {
+    "id": "iron_sword_155",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_156": {
+    "id": "iron_sword_156",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_157": {
+    "id": "iron_sword_157",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_158": {
+    "id": "iron_sword_158",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_159": {
+    "id": "iron_sword_159",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_160": {
+    "id": "iron_sword_160",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_161": {
+    "id": "iron_sword_161",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_162": {
+    "id": "iron_sword_162",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_163": {
+    "id": "iron_sword_163",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_164": {
+    "id": "iron_sword_164",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_165": {
+    "id": "iron_sword_165",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_166": {
+    "id": "iron_sword_166",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_167": {
+    "id": "iron_sword_167",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_168": {
+    "id": "iron_sword_168",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_169": {
+    "id": "iron_sword_169",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_170": {
+    "id": "iron_sword_170",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_171": {
+    "id": "iron_sword_171",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_172": {
+    "id": "iron_sword_172",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_173": {
+    "id": "iron_sword_173",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_174": {
+    "id": "iron_sword_174",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_175": {
+    "id": "iron_sword_175",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_176": {
+    "id": "iron_sword_176",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_177": {
+    "id": "iron_sword_177",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_178": {
+    "id": "iron_sword_178",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_179": {
+    "id": "iron_sword_179",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_180": {
+    "id": "iron_sword_180",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_181": {
+    "id": "iron_sword_181",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_182": {
+    "id": "iron_sword_182",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_183": {
+    "id": "iron_sword_183",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_184": {
+    "id": "iron_sword_184",
+    "name": "Eisenschwert",
+    "type": "weapon",
+    "icon_id": "sword_1h",
+    "slot": "weapon",
+    "stats_bonus": { "atk": 5 },
+    "value_gold": 25,
+    "max_stack": 1
+  },
+  "iron_sword_185": {

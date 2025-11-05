@@ -1,0 +1,62 @@
+{
+  ring_of_health_small: {
+    id: "ring_of_health_small",
+    name: "Kleiner Gesundheitsring",
+    type: "accessory",
+    icon_id: "ring_health_small",
+    slot: "ring",
+    stats_bonus: {
+      max_hp: 25,
+    },
+    value_gold: 40,
+    max_stack: 1,
+  },
+  ring_of_mana_small: {
+    id: "ring_of_mana_small",
+    name: "Kleiner Manaring",
+    type: "accessory",
+    icon_id: "ring_mana_small",
+    slot: "ring",
+    stats_bonus: {
+      max_mana: 25,
+    },
+    value_gold: 40,
+    max_stack: 1,
+  },
+  ring_of_strength_small: {
+    id: "ring_of_strength_small",
+    name: "Kleiner Ring der Stärke",
+    type: "accessory",
+    icon_id: "ring_strength_small",
+    slot: "ring",
+    stats_bonus: {
+      atk: 1,
+    },
+    value_gold: 35,
+    max_stack: 1,
+  },
+  ring_of_protection_small: {
+    id: "ring_of_protection_small",
+    name: "Kleiner Schutzring",
+    type: "accessory",
+    icon_id: "ring_protection_small",
+    slot: "ring",
+    stats_bonus: {
+      def: 1,
+    },
+    value_gold: 35,
+    max_stack: 1,
+  },
+  amulet_of_apprentice: {
+    id: "amulet_of_apprentice",
+    name: "Amulett des Lehrlings",
+    type: "accessory",
+    icon_id: "amulet_apprentice",
+    slot: "amulet",
+    stats_bonus: {
+      magic_atk: 2,
+    },
+    value_gold: 45,
+    max_stack: 1,
+  },
+}

@@ -42,13 +42,16 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from rpg_project.src.config.item_loader import load_all_items
 from rpg_project.src.models.core import Item, Opponent
 from rpg_project.src.services.config_loader import ConfigLoader
 
 
 def test_load_items():
-    items = ConfigLoader.load_config("config/items.json5", Item)
-    # GDD 2: Es sind jetzt alle Items aus der Datenbank enthalten
+    items_dict = load_all_items()
+    # Items als Item-Objekte parsen
+    from rpg_project.src.models.core import Item
+    items = [Item(**item) for item in items_dict.values()]
     assert len(items) >= 100
     ids = [item.id for item in items]
     names = [item.name for item in items]
@@ -80,6 +83,6 @@ def test_load_opponents():
     assert "orc_shaman" in ids
     orc_shaman = next(o for o in opponents if o.id == "orc_shaman")
     assert orc_shaman.name == "Ork-Schamane"
-    assert "role_magic_fire" in orc_shaman.archetypes
+    assert orc_shaman.archetypes is not None and "role_magic_fire" in orc_shaman.archetypes
     assert orc_shaman.stats["mana"] == 50
     assert "skill_heal_light" in orc_shaman.skills
