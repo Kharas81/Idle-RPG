@@ -157,6 +157,7 @@ def do_tick():
 def do_reset():
     game_state["tick"] = 0
     game_state["message"] = "Zurückgesetzt."
+    return GameState(**game_state)
 """GameState-API: Stellt Endpunkte für Spielzustand, Tick und Reset bereit.
 """
 

@@ -7,4 +7,177 @@ collected 66 items
 
 tests/integration/test_battle_api.py ..                                  [  3%]
 tests/integration/test_equipment_api.py ....                             [  9%]
-tests/integration/test_game_state_api.py .
+tests/integration/test_game_state_api.py .F                              [ 12%]
+tests/integration/test_interaction_api.py ..                             [ 15%]
+tests/integration/test_replay_service.py ..                              [ 18%]
+tests/integration/test_session_manager.py ..                             [ 21%]
+tests/integration/test_stats_api.py .                                    [ 22%]
+tests/integration/test_stats_tracker.py .                                [ 24%]
+tests/integration/test_talent_api.py ..                                  [ 27%]
+tests/unit/test_battle_engine.py ....                                    [ 33%]
+tests/unit/test_battle_engine_v2.py .                                    [ 34%]
+tests/unit/test_config_loader.py .......                                 [ 45%]
+tests/unit/test_crafting_service.py ..                                   [ 48%]
+tests/unit/test_entity_manager.py ...                                    [ 53%]
+tests/unit/test_equipment_service.py ........                            [ 65%]
+tests/unit/test_gathering_service.py ..                                  [ 68%]
+tests/unit/test_interaction_service.py ....                              [ 74%]
+tests/unit/test_main.py ..                                               [ 77%]
+tests/unit/test_movement_service.py ....                                 [ 83%]
+tests/unit/test_opponent_ai.py ...                                       [ 87%]
+tests/unit/test_rng_service.py .                                         [ 89%]
+tests/unit/test_rpg_service.py ..                                        [ 92%]
+tests/unit/test_talent_service.py ....                                   [ 98%]
+tests/unit/test_world_state.py .                                         [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_tick_and_reset ______________________________
+
+client = <starlette.testclient.TestClient object at 0x796d2366e630>
+
+    def test_tick_and_reset(client):
+        # Reset
+>       resp = client.post("/reset")
+               ^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration/test_game_state_api.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/testclient.py:552: in post
+    return super().post(
+/home/codespace/.local/lib/python3.12/site-packages/httpx/_client.py:1144: in post
+    return self.request(
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/testclient.py:451: in request
+    return super().request(
+/home/codespace/.local/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/codespace/.local/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+/home/codespace/.local/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+/home/codespace/.local/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/codespace/.local/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/testclient.py:354: in handle_request
+    raise exc
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/testclient.py:351: in handle_request
+    portal.call(self.app, scope, receive, send)
+/home/codespace/.local/lib/python3.12/site-packages/anyio/from_thread.py:290: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+/usr/local/python/3.12.1/lib/python3.12/concurrent/futures/_base.py:401: in __get_result
+    raise self._exception
+/home/codespace/.local/lib/python3.12/site-packages/anyio/from_thread.py:221: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/applications.py:1134: in __call__
+    await super().__call__(scope, receive, send)
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/applications.py:113: in __call__
+    await self.middleware_stack(scope, receive, send)
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/errors.py:186: in __call__
+    raise exc
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/middleware/exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py:716: in __call__
+    await self.middleware_stack(scope, receive, send)
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py:736: in app
+    await route.handle(scope, receive, send)
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/routing.py:290: in handle
+    await self.app(scope, receive, send)
+/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py:125: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+/usr/local/python/3.12.1/lib/python3.12/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py:111: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py:413: in app
+    content = await serialize_response(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def serialize_response(
+        *,
+        field: Optional[ModelField] = None,
+        response_content: Any,
+        include: Optional[IncEx] = None,
+        exclude: Optional[IncEx] = None,
+        by_alias: bool = True,
+        exclude_unset: bool = False,
+        exclude_defaults: bool = False,
+        exclude_none: bool = False,
+        is_coroutine: bool = True,
+    ) -> Any:
+        if field:
+            errors = []
+            if not hasattr(field, "serialize"):
+                # pydantic v1
+                response_content = _prepare_response_content(
+                    response_content,
+                    exclude_unset=exclude_unset,
+                    exclude_defaults=exclude_defaults,
+                    exclude_none=exclude_none,
+                )
+            if is_coroutine:
+                value, errors_ = field.validate(response_content, {}, loc=("response",))
+            else:
+                value, errors_ = await run_in_threadpool(
+                    field.validate, response_content, {}, loc=("response",)
+                )
+            if isinstance(errors_, list):
+                errors.extend(errors_)
+            elif errors_:
+                errors.append(errors_)
+            if errors:
+>               raise ResponseValidationError(
+                    errors=_normalize_errors(errors), body=response_content
+                )
+E               fastapi.exceptions.ResponseValidationError: 1 validation errors:
+E                 {'type': 'model_attributes_type', 'loc': ('response',), 'msg': 'Input should be a valid dictionary or object to extract fields from', 'input': None}
+
+/usr/local/python/3.12.1/lib/python3.12/site-packages/fastapi/routing.py:254: ResponseValidationError
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.1-final-0 ________________
+
+Name                                              Stmts   Miss Branch BrPart  Cover   Missing
+---------------------------------------------------------------------------------------------
+rpg_project/src/api/game_state.py                    98     51     22      0    39%   65-68, 71-74, 77-80, 85-93, 98-102, 116-129, 134-143, 152-154
+rpg_project/src/api/replay.py                        28      1      4      1    94%   28
+rpg_project/src/config/item_loader.py                20      4      8      3    75%   12, 14->13, 23-25
+rpg_project/src/main.py                              20      2      4      1    88%   47-48
+rpg_project/src/models/ecs.py                        20      1      4      2    88%   16, 23->exit
+rpg_project/src/services/battle_engine.py           112     10     42     13    85%   80, 88->90, 91->87, 100, 117, 119, 125, 128, 131, 134->138, 139, 148-149, 150->153
+rpg_project/src/services/config_loader.py            63      1     40      3    96%   10->9, 56->55, 65
+rpg_project/src/services/crafting_service.py         31      4     22      4    81%   12, 26->25, 34-36, 37->31
+rpg_project/src/services/equipment_service.py        33      0     14      1    98%   35->37
+rpg_project/src/services/event_manager.py            12      0      4      1    94%   14->16
+rpg_project/src/services/gathering_service.py        16      1      4      1    90%   18
+rpg_project/src/services/interaction_service.py      27      2     10      2    89%   29, 41
+rpg_project/src/services/movement_service.py         35      7     24      8    75%   12, 14, 18, 27, 34, 36, 38, 39->41
+rpg_project/src/services/rng_service.py              22      1      4      1    92%   24, 30->exit
+rpg_project/src/services/rpg_service.py              24      1      6      2    90%   14, 23->33
+rpg_project/src/services/session_manager.py          30      0      4      1    97%   18->21
+rpg_project/src/services/stats_tracker.py            10      0      4      2    86%   11->exit, 13->exit
+rpg_project/src/services/talent_service.py           34      4     22      5    84%   15, 29, 37, 41->38, 44
+---------------------------------------------------------------------------------------------
+TOTAL                                               936     90    258     51    86%
+
+18 files skipped due to complete coverage.
+=========================== short test summary info ============================
+FAILED tests/integration/test_game_state_api.py::test_tick_and_reset - fastap...
+========================= 1 failed, 65 passed in 6.10s =========================
