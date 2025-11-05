@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Idle RPG Game Tester</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        .section { margin-bottom: 2em; }
+        label, input { font-size: 1em; }
+        button { margin: 0.5em; padding: 0.5em 1em; font-size: 1em; }
+        #output { margin-top: 1em; white-space: pre; background: #f4f4f4; padding: 1em; border-radius: 5px; }
+        #status { font-weight: bold; margin-left: 1em; }
+        .status-ok { color: green; }
+        .status-fail { color: red; }
+        .statbox { display: inline-block; min-width: 120px; margin-right: 2em; }
+        .inv-table { border-collapse: collapse; margin-top: 1em; }
+        .inv-table th, .inv-table td { border: 1px solid #ccc; padding: 4px 8px; }
+        .inv-table th { background: #eee; }
+    </style>
+</head>
+<body>
+    <h1>Idle RPG Game Tester</h1>
+    <div class="section">
+        <label>API-URL: <input id="apiurl" value="http://localhost:8000" size="40" oninput="checkApiStatus()"></label>
+        <span id="status" class="status-fail">Nicht verbunden</span>
+        <button onclick="checkApiStatus()">Verbindung testen</button>
+    </div>
+    <div class="section">
+        <button onclick="callApi('GET', '/state')">Spielstand abrufen</button>
+        <button onclick="callApi('POST', '/tick')">Tick ausführen</button>
+        <button onclick="callApi('POST', '/reset')">Spiel zurücksetzen</button>
+    </div>
+    <div class="section" id="gameinfo"></div>
+    <div id="output">Wähle eine Aktion…</div>
+    <script>
+    async function callApi(method, path) {
+        const url = document.getElementById('apiurl').value + path;
+        let resp, data;
+        try {
+            resp = await fetch(url, { method });
+            data = await resp.json();
+            setStatus(true);
+            showGameInfo(data);
+        } catch (e) {
+            data = { error: e.toString() };
+            setStatus(false);
+            showGameInfo(null);
+        }
+        document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+    }
+    async function checkApiStatus() {
+        const url = document.getElementById('apiurl').value + '/state';
+        let ok = false;
+        try {
+            const resp = await fetch(url);
+            ok = resp.ok;
+            if (ok) {
+                const data = await resp.json();
+                showGameInfo(data);
+            } else {
+                showGameInfo(null);
+            }
+        } catch (e) {
+            ok = false;
+            showGameInfo(null);
+        }
+        setStatus(ok);
+    }
+    function setStatus(ok) {
+        const status = document.getElementById('status');
+        if (ok) {
+            status.textContent = 'Verbunden';
+            status.className = 'status-ok';
+        } else {
+            status.textContent = 'Nicht verbunden';
+            status.className = 'status-fail';
+        }
+    }
+    function showGameInfo(data) {
+        const box = document.getElementById('gameinfo');
+        if (!data || data.error) {
+            box.innerHTML = '<span style="color:red">Keine Spieldaten verfügbar.</span>';
+            return;
+        }
+        let html = '';
+        // Spieler-Status
+        if (data.player) {
+            html += `<div class="statbox"><b>Spieler</b><br>HP: ${data.player.hp}<br>Gold: ${data.player.gold}<br>Level: ${data.player.level || '-'}<br>XP: ${data.player.xp || '-'}<br>Runde: ${data.round || '-'}<br></div>`;
+        }
+        // Gegner-Status
+        if (data.opponent) {
+            html += `<div class="statbox"><b>Gegner</b><br>Name: ${data.opponent.name || '-'}<br>HP: ${data.opponent.hp || '-'}<br>Typ: ${data.opponent.type || '-'}<br></div>`;
+        }
+        // Inventar
+        if (data.inventory && Array.isArray(data.inventory)) {
+            html += '<div><b>Inventar</b><table class="inv-table"><tr><th>Item</th><th>Menge</th></tr>';
+            for (const item of data.inventory) {
+                html += `<tr><td>${item.name || item.id}</td><td>${item.amount || 1}</td></tr>`;
+            }
+            html += '</table></div>';
+        }
+        box.innerHTML = html;
+    }
+    window.onload = checkApiStatus;
+    </script>
+</body>
+</html>
