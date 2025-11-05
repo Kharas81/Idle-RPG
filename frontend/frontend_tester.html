@@ -5,14 +5,23 @@
     <title>Idle RPG Frontend Tester</title>
     <style>
         body { font-family: sans-serif; margin: 2em; }
-        button { margin: 0.5em; padding: 0.5em 1em; }
+        .section { margin-bottom: 2em; }
+        label, input { font-size: 1em; }
+        button { margin: 0.5em; padding: 0.5em 1em; font-size: 1em; }
         #output { margin-top: 1em; white-space: pre; background: #f4f4f4; padding: 1em; border-radius: 5px; }
+        #status { font-weight: bold; margin-left: 1em; }
+        .status-ok { color: green; }
+        .status-fail { color: red; }
     </style>
 </head>
 <body>
     <h1>Idle RPG Frontend Tester</h1>
-    <label>API-URL: <input id="apiurl" value="http://localhost:8000" size="40"></label>
-    <div>
+    <div class="section">
+        <label>API-URL: <input id="apiurl" value="http://localhost:8000" size="40" oninput="checkApiStatus()"></label>
+        <span id="status" class="status-fail">Nicht verbunden</span>
+        <button onclick="checkApiStatus()">Verbindung testen</button>
+    </div>
+    <div class="section">
         <button onclick="callApi('GET', '/state')">GET /state</button>
         <button onclick="callApi('POST', '/tick')">POST /tick</button>
         <button onclick="callApi('POST', '/reset')">POST /reset</button>
@@ -25,11 +34,35 @@
         try {
             resp = await fetch(url, { method });
             data = await resp.json();
+            setStatus(true);
         } catch (e) {
             data = { error: e.toString() };
+            setStatus(false);
         }
         document.getElementById('output').textContent = JSON.stringify(data, null, 2);
     }
+    async function checkApiStatus() {
+        const url = document.getElementById('apiurl').value + '/state';
+        let ok = false;
+        try {
+            const resp = await fetch(url);
+            ok = resp.ok;
+        } catch (e) {
+            ok = false;
+        }
+        setStatus(ok);
+    }
+    function setStatus(ok) {
+        const status = document.getElementById('status');
+        if (ok) {
+            status.textContent = 'Verbunden';
+            status.className = 'status-ok';
+        } else {
+            status.textContent = 'Nicht verbunden';
+            status.className = 'status-fail';
+        }
+    }
+    window.onload = checkApiStatus;
     </script>
 </body>
 </html>
