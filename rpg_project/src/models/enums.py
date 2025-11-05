@@ -7,6 +7,8 @@ class ItemType(Enum):
     CONSUMABLE = "consumable"
     QUEST = "quest"
     RESOURCE = "resource"
+    ACCESSORY = "accessory"
+    TRADE_GOOD = "trade_good"
 
 # Equipment-Slots für Ausrüstungssystem
 class EquipmentSlot(Enum):

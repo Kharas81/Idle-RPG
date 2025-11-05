@@ -4,7 +4,7 @@ Alle Werte werden aus der Map-Config geladen.
 from enum import Enum
 from typing import Any
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class InteractableType(str, Enum):
@@ -28,5 +28,4 @@ class Interactable(BaseModel):
     loot: list[str] | None = None  # Item-IDs, die enthalten sind (z.B. in Truhe)
     properties: dict[str, Any] | None = None  # Zusätzliche Daten (z.B. Schlüssel-ID, Schalter-Ziel)
 
-    class Config:
-        use_enum_values = True
+    model_config = ConfigDict(use_enum_values=True)

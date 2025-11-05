@@ -4,6 +4,7 @@ from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel
 
 from rpg_project.src.services.battle_engine import BattleStatus, BattleStore, EntityState
+from rpg_project.src.services.world_state import WorldState
 
 router = APIRouter()
 battle_store = BattleStore()
@@ -29,3 +30,7 @@ def battle_state(battle_id: str = Query(..., description="ID für den Kampf")):
     if not state:
         raise HTTPException(status_code=404, detail="Kein Kampf aktiv")
     return state
+
+# Debugging: Log the entire state of the world
+    print(f"WorldState EntityManager state: {world_state.entity_manager._entities}")
+    print(f"WorldState components: {world_state.entity_manager._components}")

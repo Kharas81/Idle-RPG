@@ -9,6 +9,738 @@
     "value_gold": 25,
     "max_stack": 1
   },
+    "iron_dagger": {
+      "id": "iron_dagger",
+      "name": "Eisendolch",
+      "type": "weapon",
+      "icon_id": "dagger_iron",
+      "slot": "weapon",
+      "stats_bonus": { "atk": 3, "speed": 2 },
+      "value_gold": 20,
+      "max_stack": 1
+    },
+    "iron_axe": {
+      "id": "iron_axe",
+      "name": "Eisenaxt",
+      "type": "weapon",
+      "icon_id": "axe_iron",
+      "slot": "weapon",
+      "stats_bonus": { "atk": 6, "speed": -1 },
+      "value_gold": 28,
+      "max_stack": 1
+    },
+    "iron_mace": {
+      "id": "iron_mace",
+      "name": "Eisenstreitkolben",
+      "type": "weapon",
+      "icon_id": "mace_iron",
+      "slot": "weapon",
+      "stats_bonus": { "atk": 7, "speed": -2 },
+      "value_gold": 30,
+      "max_stack": 1
+    },
+    "short_spear": {
+      "id": "short_spear",
+      "name": "Kurzer Speer",
+      "type": "weapon",
+      "icon_id": "spear_short",
+      "slot": "weapon",
+      "stats_bonus": { "atk": 4, "speed": 1 },
+      "value_gold": 22,
+      "max_stack": 1
+    },
+    "hunting_bow": {
+      "id": "hunting_bow",
+      "name": "Jagdbogen",
+      "type": "weapon",
+      "icon_id": "bow_hunting",
+      "slot": "weapon",
+      "stats_bonus": { "atk": 4 },
+      "value_gold": 25,
+      "max_stack": 1
+    },
+      "oaken_staff": {
+        "id": "oaken_staff",
+        "name": "Eichenstab",
+        "type": "weapon",
+        "icon_id": "staff_oaken",
+        "slot": "weapon",
+        "stats_bonus": { "magic_atk": 5 },
+        "value_gold": 30,
+        "max_stack": 1
+      },
+      "steel_sword": {
+        "id": "steel_sword",
+        "name": "Stahlschwert",
+        "type": "weapon",
+        "icon_id": "sword_steel",
+        "slot": "weapon",
+        "stats_bonus": { "atk": 10 },
+        "value_gold": 120,
+        "max_stack": 1
+      },
+      "steel_greatsword": {
+        "id": "steel_greatsword",
+        "name": "Stahl-Großschwert",
+        "type": "weapon",
+        "icon_id": "greatsword_steel",
+        "slot": "weapon",
+        "stats_bonus": { "atk": 12 },
+        "value_gold": 150,
+        "max_stack": 1
+      },
+      "orcish_battleaxe": {
+        "id": "orcish_battleaxe",
+        "name": "Orkische Streitaxt",
+        "type": "weapon",
+        "icon_id": "battleaxe_orcish",
+        "slot": "weapon",
+        "stats_bonus": { "atk": 14 },
+        "value_gold": 160,
+        "max_stack": 1
+      },
+      "elven_bow": {
+        "id": "elven_bow",
+        "name": "Elfenbogen",
+        "type": "weapon",
+        "icon_id": "bow_elven",
+        "slot": "weapon",
+        "stats_bonus": { "atk": 8, "speed": 3 },
+        "value_gold": 140,
+        "max_stack": 1
+      },
+      "apprentice_staff": {
+        "id": "apprentice_staff",
+        "name": "Lehrlingsstab",
+        "type": "weapon",
+        "icon_id": "staff_apprentice",
+        "slot": "weapon",
+        "stats_bonus": { "magic_atk": 12 },
+        "value_gold": 150,
+        "max_stack": 1
+      },
+      "obsidian_dagger": {
+        "id": "obsidian_dagger",
+        "name": "Obsidiandolch",
+        "type": "weapon",
+        "icon_id": "dagger_obsidian",
+        "slot": "weapon",
+        "stats_bonus": { "atk": 5, "magic_atk": 8 },
+        "value_gold": 180,
+        "max_stack": 1
+      },
+      "mithril_sword": {
+        "id": "mithril_sword",
+        "name": "Mithrilschwert",
+        "type": "weapon",
+        "icon_id": "sword_mithril",
+        "slot": "weapon",
+        "stats_bonus": { "atk": 15, "speed": 2 },
+        "value_gold": 450,
+        "max_stack": 1
+      },
+      "golem_core_hammer": {
+        "id": "golem_core_hammer",
+        "name": "Golemkern-Hammer",
+        "type": "weapon",
+        "icon_id": "hammer_golem_core",
+        "slot": "weapon",
+        "stats_bonus": { "atk": 18 },
+        "value_gold": 500,
+        "max_stack": 1
+      },
+      "dread_knight_sword": {
+        "id": "dread_knight_sword",
+        "name": "Schwert des Schreckensritters",
+        "type": "weapon",
+        "icon_id": "sword_dread_knight",
+        "slot": "weapon",
+        "stats_bonus": { "atk": 15, "lifesteal": 0.05 },
+        "value_gold": 700,
+        "max_stack": 1
+      },
+      "archmage_staff": {
+        "id": "archmage_staff",
+        "name": "Erzmagier-Stab",
+        "type": "weapon",
+        "icon_id": "staff_archmage",
+        "slot": "weapon",
+        "stats_bonus": { "magic_atk": 30 },
+        "value_gold": 750,
+        "max_stack": 1
+      },
+      "harpy_queen_dagger": {
+        "id": "harpy_queen_dagger",
+        "name": "Dolch der Harpyienkönigin",
+        "type": "weapon",
+        "icon_id": "dagger_harpy_queen",
+        "slot": "weapon",
+        "stats_bonus": { "atk": 12, "speed": 5 },
+        "value_gold": 650,
+        "max_stack": 1
+      },
+      "phoenix_blade": {
+        "id": "phoenix_blade",
+        "name": "Phönixklinge",
+        "type": "weapon",
+        "icon_id": "blade_phoenix",
+        "slot": "weapon",
+        "stats_bonus": { "atk": 20 },
+        "value_gold": 2000,
+        "max_stack": 1
+      },
+      "starmetal_greatsword": {
+        "id": "starmetal_greatsword",
+        "name": "Sternenmetall-Großschwert",
+        "type": "weapon",
+        "icon_id": "greatsword_starmetal",
+        "slot": "weapon",
+        "stats_bonus": { "atk": 25 },
+        "value_gold": 2500,
+        "max_stack": 1
+      },
+      "staff_of_the_lich_king": {
+        "id": "staff_of_the_lich_king",
+        "name": "Stab des Lichkönigs",
+        "type": "weapon",
+        "icon_id": "staff_lich_king",
+        "slot": "weapon",
+        "stats_bonus": { "magic_atk": 40 },
+        "value_gold": 2800,
+        "max_stack": 1
+      },
+        "armor_steel_helmet": {
+          "id": "armor_steel_helmet",
+          "name": "Stahlhelm",
+          "type": "armor",
+          "icon_id": "helmet_steel",
+          "slot": "head",
+          "stats_bonus": { "def": 8 },
+          "value_gold": 80,
+          "max_stack": 1
+        },
+        "armor_steel_plate": {
+          "id": "armor_steel_plate",
+          "name": "Stahlharnisch",
+          "type": "armor",
+          "icon_id": "plate_steel",
+          "slot": "chest",
+          "stats_bonus": { "def": 12 },
+          "value_gold": 140,
+          "max_stack": 1
+        },
+        "armor_steel_gauntlets": {
+          "id": "armor_steel_gauntlets",
+          "name": "Stahlhandschuhe",
+          "type": "armor",
+          "icon_id": "gauntlets_steel",
+          "slot": "hands",
+          "stats_bonus": { "def": 5 },
+          "value_gold": 60,
+          "max_stack": 1
+        },
+        "armor_steel_boots": {
+          "id": "armor_steel_boots",
+          "name": "Stahlstiefel",
+          "type": "armor",
+          "icon_id": "boots_steel",
+          "slot": "feet",
+          "stats_bonus": { "def": 5 },
+          "value_gold": 60,
+          "max_stack": 1
+        },
+        "armor_mithril_helmet": {
+          "id": "armor_mithril_helmet",
+          "name": "Mithrilhelm",
+          "type": "armor",
+          "icon_id": "helmet_mithril",
+          "slot": "head",
+          "stats_bonus": { "def": 12 },
+          "value_gold": 300,
+          "max_stack": 1
+        },
+        "armor_mithril_plate": {
+          "id": "armor_mithril_plate",
+          "name": "Mithrilharnisch",
+          "type": "armor",
+          "icon_id": "plate_mithril",
+          "slot": "chest",
+          "stats_bonus": { "def": 18 },
+          "value_gold": 500,
+          "max_stack": 1
+        },
+        "armor_mithril_gauntlets": {
+          "id": "armor_mithril_gauntlets",
+          "name": "Mithrilhandschuhe",
+          "type": "armor",
+          "icon_id": "gauntlets_mithril",
+          "slot": "hands",
+          "stats_bonus": { "def": 9 },
+          "value_gold": 220,
+          "max_stack": 1
+        },
+        "armor_mithril_boots": {
+          "id": "armor_mithril_boots",
+          "name": "Mithrilstiefel",
+          "type": "armor",
+          "icon_id": "boots_mithril",
+          "slot": "feet",
+          "stats_bonus": { "def": 9 },
+          "value_gold": 220,
+          "max_stack": 1
+        },
+        "iron_shield": {
+          "id": "iron_shield",
+          "name": "Eisenschild",
+          "type": "armor",
+          "icon_id": "shield_iron",
+          "slot": "shield",
+          "stats_bonus": { "def": 5 },
+          "value_gold": 30,
+          "max_stack": 1
+        },
+        "steel_shield": {
+          "id": "steel_shield",
+          "name": "Stahlschild",
+          "type": "armor",
+          "icon_id": "shield_steel",
+          "slot": "shield",
+          "stats_bonus": { "def": 10 },
+          "value_gold": 110,
+          "max_stack": 1
+        },
+        "obsidian_shield": {
+          "id": "obsidian_shield",
+          "name": "Obsidianschild",
+          "type": "armor",
+          "icon_id": "shield_obsidian",
+          "slot": "shield",
+          "stats_bonus": { "def": 7 },
+          "value_gold": 150,
+          "max_stack": 1
+        },
+        "mithril_shield": {
+          "id": "mithril_shield",
+          "name": "Mithrilschild",
+          "type": "armor",
+          "icon_id": "shield_mithril",
+          "slot": "shield",
+          "stats_bonus": { "def": 15 },
+          "value_gold": 400,
+          "max_stack": 1
+        },
+        "dragonscale_shield": {
+          "id": "dragonscale_shield",
+          "name": "Drachenschuppen-Schild",
+          "type": "armor",
+          "icon_id": "shield_dragonscale",
+          "slot": "shield",
+          "stats_bonus": { "def": 25 },
+          "value_gold": 1500,
+          "max_stack": 1
+        },
+    "red_herb": {
+      "id": "red_herb",
+      "name": "Rotes Kraut",
+      "type": "resource",
+      "icon_id": "herb_red",
+      "value_gold": 1,
+      "max_stack": 99
+    },
+    "blue_herb": {
+      "id": "blue_herb",
+      "name": "Blaues Kraut",
+      "type": "resource",
+      "icon_id": "herb_blue",
+      "value_gold": 1,
+      "max_stack": 99
+    },
+    "vial": {
+      "id": "vial",
+      "name": "Leere Phiole",
+      "type": "resource",
+      "icon_id": "vial_empty",
+      "value_gold": 1,
+      "max_stack": 99
+    },
+    "scrap_leather": {
+      "id": "scrap_leather",
+      "name": "Lederreste",
+      "type": "resource",
+      "icon_id": "leather_scrap",
+      "value_gold": 2,
+      "max_stack": 99
+    },
+    "linen_cloth": {
+      "id": "linen_cloth",
+      "name": "Leinenstoff",
+      "type": "resource",
+      "icon_id": "cloth_linen",
+      "value_gold": 2,
+      "max_stack": 99
+    },
+    "coal": {
+      "id": "coal",
+      "name": "Kohle",
+      "type": "resource",
+      "icon_id": "coal",
+      "value_gold": 1,
+      "max_stack": 99
+    },
+    "ectoplasm": {
+      "id": "ectoplasm",
+      "name": "Ektoplasma",
+      "type": "resource",
+      "icon_id": "ectoplasm",
+      "value_gold": 5,
+      "max_stack": 99
+    },
+    "shadow_silk": {
+      "id": "shadow_silk",
+      "name": "Schattenseide",
+      "type": "resource",
+      "icon_id": "silk_shadow",
+      "value_gold": 6,
+      "max_stack": 99
+    },
+    "obsidian_shard": {
+      "id": "obsidian_shard",
+      "name": "Obsidiansplitter",
+      "type": "resource",
+      "icon_id": "obsidian_shard",
+      "value_gold": 8,
+      "max_stack": 99
+    },
+    "wyvern_scale": {
+      "id": "wyvern_scale",
+      "name": "Wyvernschuppe",
+      "type": "resource",
+      "icon_id": "scale_wyvern",
+      "value_gold": 7,
+      "max_stack": 99
+    },
+    "harpy_feather": {
+      "id": "harpy_feather",
+      "name": "Harpyienfeder",
+      "type": "resource",
+      "icon_id": "feather_harpy",
+      "value_gold": 5,
+      "max_stack": 99
+    },
+    "troll_blood": {
+      "id": "troll_blood",
+      "name": "Trollblut",
+      "type": "resource",
+      "icon_id": "blood_troll",
+      "value_gold": 10,
+      "max_stack": 99
+    },
+    "steel_ingot": {
+      "id": "steel_ingot",
+      "name": "Stahlbarren",
+      "type": "resource",
+      "icon_id": "ingot_steel",
+      "value_gold": 8,
+      "max_stack": 99
+    },
+    "mithril_ore": {
+      "id": "mithril_ore",
+      "name": "Mithrilerz",
+      "type": "resource",
+      "icon_id": "ore_mithril",
+      "value_gold": 20,
+      "max_stack": 99
+    },
+    "ancient_core": {
+      "id": "ancient_core",
+      "name": "Antiker Kern",
+      "type": "resource",
+      "icon_id": "core_ancient",
+      "value_gold": 30,
+      "max_stack": 50
+    },
+    "lich_phylactery_shard": {
+      "id": "lich_phylactery_shard",
+      "name": "Lich-Phylakterium-Splitter",
+      "type": "resource",
+      "icon_id": "phylactery_shard",
+      "value_gold": 35,
+      "max_stack": 50
+    },
+    "manticore_venom": {
+      "id": "manticore_venom",
+      "name": "Mantikor-Gift",
+      "type": "resource",
+      "icon_id": "venom_manticore",
+      "value_gold": 25,
+      "max_stack": 50
+    },
+    "shadow_leather": {
+      "id": "shadow_leather",
+      "name": "Schattenleder",
+      "type": "resource",
+      "icon_id": "leather_shadow",
+      "value_gold": 15,
+      "max_stack": 99
+    },
+    "rune_thread": {
+      "id": "rune_thread",
+      "name": "Runenfaden",
+      "type": "resource",
+      "icon_id": "thread_rune",
+      "value_gold": 12,
+      "max_stack": 99
+    },
+    "dragonscale_red": {
+      "id": "dragonscale_red",
+      "name": "Rote Drachenschuppe",
+      "type": "resource",
+      "icon_id": "scale_dragon_red",
+      "value_gold": 100,
+      "max_stack": 20
+    },
+    "void_crystal": {
+      "id": "void_crystal",
+      "name": "Leerenkristall",
+      "type": "resource",
+      "icon_id": "crystal_void",
+      "value_gold": 120,
+      "max_stack": 20
+    },
+    "phoenix_ash": {
+      "id": "phoenix_ash",
+      "name": "Phönixasche",
+      "type": "resource",
+      "icon_id": "ash_phoenix",
+      "value_gold": 150,
+      "max_stack": 20
+    },
+    "star_metal_ore": {
+      "id": "star_metal_ore",
+      "name": "Sternenmetall-Erz",
+      "type": "resource",
+      "icon_id": "ore_starmetal",
+      "value_gold": 80,
+      "max_stack": 50
+    },
+    "celestial_cloth": {
+      "id": "celestial_cloth",
+      "name": "Himmlischer Stoff",
+      "type": "resource",
+      "icon_id": "cloth_celestial",
+      "value_gold": 70,
+      "max_stack": 50
+    },
+      "armor_iron_helmet": {
+        "id": "armor_iron_helmet",
+        "name": "Eisenhelm",
+        "type": "armor",
+        "icon_id": "helmet_iron",
+        "slot": "head",
+        "stats_bonus": { "def": 5 },
+        "value_gold": 20,
+        "max_stack": 1
+      },
+      "armor_iron_plate": {
+        "id": "armor_iron_plate",
+        "name": "Eisenharnisch",
+        "type": "armor",
+        "icon_id": "plate_iron",
+        "slot": "chest",
+        "stats_bonus": { "def": 8 },
+        "value_gold": 40,
+        "max_stack": 1
+      },
+      "armor_iron_gauntlets": {
+        "id": "armor_iron_gauntlets",
+        "name": "Eisenhandschuhe",
+        "type": "armor",
+        "icon_id": "gauntlets_iron",
+        "slot": "hands",
+        "stats_bonus": { "def": 3 },
+        "value_gold": 15,
+        "max_stack": 1
+      },
+      "armor_iron_boots": {
+        "id": "armor_iron_boots",
+        "name": "Eisenstiefel",
+        "type": "armor",
+        "icon_id": "boots_iron",
+        "slot": "feet",
+        "stats_bonus": { "def": 3 },
+        "value_gold": 15,
+        "max_stack": 1
+      },
+      "ring_of_health_small": {
+        "id": "ring_of_health_small",
+        "name": "Kleiner Gesundheitsring",
+        "type": "accessory",
+        "icon_id": "ring_health_small",
+        "slot": "ring",
+        "stats_bonus": { "max_hp": 25 },
+        "value_gold": 40,
+        "max_stack": 1
+      },
+      "ring_of_mana_small": {
+        "id": "ring_of_mana_small",
+        "name": "Kleiner Manaring",
+        "type": "accessory",
+        "icon_id": "ring_mana_small",
+        "slot": "ring",
+        "stats_bonus": { "max_mana": 25 },
+        "value_gold": 40,
+        "max_stack": 1
+      },
+      "ring_of_strength_small": {
+        "id": "ring_of_strength_small",
+        "name": "Kleiner Ring der Stärke",
+        "type": "accessory",
+        "icon_id": "ring_strength_small",
+        "slot": "ring",
+        "stats_bonus": { "atk": 1 },
+        "value_gold": 35,
+        "max_stack": 1
+      },
+      "ring_of_protection_small": {
+        "id": "ring_of_protection_small",
+        "name": "Kleiner Schutzring",
+        "type": "accessory",
+        "icon_id": "ring_protection_small",
+        "slot": "ring",
+        "stats_bonus": { "def": 1 },
+        "value_gold": 35,
+        "max_stack": 1
+      },
+      "amulet_of_apprentice": {
+        "id": "amulet_of_apprentice",
+        "name": "Amulett des Lehrlings",
+        "type": "accessory",
+        "icon_id": "amulet_apprentice",
+        "slot": "amulet",
+        "stats_bonus": { "magic_atk": 2 },
+        "value_gold": 45,
+        "max_stack": 1
+      },
+      "janes_lost_amulet": {
+        "id": "janes_lost_amulet",
+        "name": "Janes verlorenes Amulett",
+        "type": "quest",
+        "icon_id": "amulet_jane_lost",
+        "value_gold": 0,
+        "max_stack": 1
+      },
+      "guard_report": {
+        "id": "guard_report",
+        "name": "Wach-Bericht",
+        "type": "quest",
+        "icon_id": "report_guard",
+        "value_gold": 0,
+        "max_stack": 1
+      },
+      "orc_warchief_banner": {
+        "id": "orc_warchief_banner",
+        "name": "Banner des Ork-Häuptlings",
+        "type": "quest",
+        "icon_id": "banner_orc_warchief",
+        "value_gold": 0,
+        "max_stack": 1
+      },
+      "spider_queen_venom_gland": {
+        "id": "spider_queen_venom_gland",
+        "name": "Giftblase der Spinnenkönigin",
+        "type": "quest",
+        "icon_id": "venom_gland_spider_queen",
+        "value_gold": 0,
+        "max_stack": 1
+      },
+      "boris_tools_delivery": {
+        "id": "boris_tools_delivery",
+        "name": "Boris' Werkzeuglieferung",
+        "type": "quest",
+        "icon_id": "tools_boris_delivery",
+        "value_gold": 0,
+        "max_stack": 1
+      },
+      "lich_phylactery_fragment": {
+        "id": "lich_phylactery_fragment",
+        "name": "Fragment des Lich-Phylakteriums",
+        "type": "quest",
+        "icon_id": "fragment_lich_phylactery",
+        "value_gold": 0,
+        "max_stack": 1
+      },
+      "wolf_pelt": {
+        "id": "wolf_pelt",
+        "name": "Wolfspelz",
+        "type": "trade_good",
+        "icon_id": "pelt_wolf",
+        "value_gold": 5,
+        "max_stack": 50
+      },
+      "goblin_ear": {
+        "id": "goblin_ear",
+        "name": "Goblin-Ohr",
+        "type": "trade_good",
+        "icon_id": "ear_goblin",
+        "value_gold": 2,
+        "max_stack": 99
+      },
+      "broken_sword_hilt": {
+        "id": "broken_sword_hilt",
+        "name": "Zerbrochener Schwertgriff",
+        "type": "trade_good",
+        "icon_id": "hilt_broken_sword",
+        "value_gold": 1,
+        "max_stack": 50
+      },
+      "chipped_gemstone": {
+        "id": "chipped_gemstone",
+        "name": "Abgeschlagener Edelstein",
+        "type": "trade_good",
+        "icon_id": "gemstone_chipped",
+        "value_gold": 8,
+        "max_stack": 50
+      },
+      "orcish_tusk": {
+        "id": "orcish_tusk",
+        "name": "Ork-Hauer",
+        "type": "trade_good",
+        "icon_id": "tusk_orcish",
+        "value_gold": 12,
+        "max_stack": 50
+      },
+      "faded_scroll": {
+        "id": "faded_scroll",
+        "name": "Verblasste Schriftrolle",
+        "type": "trade_good",
+        "icon_id": "scroll_faded",
+        "value_gold": 1,
+        "max_stack": 50
+      },
+      "dull_crystal": {
+        "id": "dull_crystal",
+        "name": "Trüber Kristall",
+        "type": "trade_good",
+        "icon_id": "crystal_dull",
+        "value_gold": 10,
+        "max_stack": 50
+      },
+      "silver_ring": {
+        "id": "silver_ring",
+        "name": "Silberring",
+        "type": "trade_good",
+        "icon_id": "ring_silver",
+        "value_gold": 25,
+        "max_stack": 20
+      },
+      "gold_goblet": {
+        "id": "gold_goblet",
+        "name": "Goldener Kelch",
+        "type": "trade_good",
+        "icon_id": "goblet_gold",
+        "value_gold": 100,
+        "max_stack": 5
+      },
   // 💊 Consumables (GDD 2)
   "potion_heal_small": {
     "id": "potion_heal_small",

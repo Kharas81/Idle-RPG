@@ -48,8 +48,8 @@ from rpg_project.src.services.config_loader import ConfigLoader
 
 def test_load_items():
     items = ConfigLoader.load_config("config/items.json5", Item)
-    # GDD 2: Es gibt 20 Consumables
-    assert len(items) == 21
+    # GDD 2: Es sind jetzt alle Items aus der Datenbank enthalten
+    assert len(items) >= 100
     ids = [item.id for item in items]
     names = [item.name for item in items]
     # Prüfe exemplarisch einige GDD-Items
