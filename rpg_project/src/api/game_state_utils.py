@@ -13,6 +13,8 @@ def get_player_pos(state):
     return (0,0)
 
 def set_player_pos(state, pos):
+    if not (isinstance(pos, tuple) and len(pos) == 2):
+        return
     for ent in state["entities"]:
         if ent["type"] == "player":
             ent["x"], ent["y"] = pos

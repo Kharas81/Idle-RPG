@@ -19,5 +19,6 @@ class GameState(BaseModel):
     tiles: List[Dict[str, Any]]
     entities: List[Dict[str, Any]]
     tick: int
+    message: Optional[str] = None
     world_seed: Optional[int] = None
     meta: Optional[Dict[str, Any]] = None

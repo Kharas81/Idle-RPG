@@ -3,6 +3,7 @@ from rpg_project.src.services.movement_service import MovementService
 from rpg_project.src.services.battle_engine import BattleStore, EntityState
 from rpg_project.src.models.world import Tile, WorldMap
 from rpg_project.src.api.game_state_models import Entity, GameState
+from typing import Optional
 
 router = APIRouter()
 

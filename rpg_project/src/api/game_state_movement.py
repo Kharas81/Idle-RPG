@@ -13,6 +13,10 @@ def move_player(direction: str = Query(..., description="Richtung: up/down/left/
     global game_state
     worldmap = get_worldmap_from_state(game_state)
     pos = get_player_pos(game_state)
-    new_pos = MovementService.move(pos, direction, worldmap)
-    set_player_pos(game_state, new_pos)
+    new_pos = MovementService.move(worldmap, pos, direction)
+    if new_pos != pos:
+        set_player_pos(game_state, new_pos)
+        game_state["message"] = f"Spieler bewegt sich {direction}."
+    else:
+        game_state["message"] = f"Bewegung {direction} nicht möglich."
     return GameState(**game_state)
