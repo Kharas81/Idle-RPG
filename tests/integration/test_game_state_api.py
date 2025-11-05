@@ -137,16 +137,16 @@ def test_move_player_down(client):
     assert "Spieler bewegt sich down." in data["message"] or "Bewegung down nicht möglich." in data["message"]
 
 def test_battle_missing_opponent(client):
-    resp = client.post("/reset")
-    state = client.get("/state").json()
-    resp = client.post("/battle")
+    resp = client.post("/api/reset")
+    state = client.get("/api/state").json()
+    resp = client.post("/api/battle")
     data = resp.json()
     assert "battle" in data or "error" in data
 
 def test_pickup_no_chest(client):
-    client.post("/reset")
-    client.post("/move?direction=up")
-    resp = client.post("/pickup")
+    client.post("/api/reset")
+    client.post("/api/move?direction=up")
+    resp = client.post("/api/pickup")
     assert resp.status_code == 200
     data = resp.json()
     assert "Keine Kiste am Spieler-Standort." in data["message"]
