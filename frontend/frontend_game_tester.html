@@ -18,6 +18,7 @@
         .inv-table th { background: #eee; }
         .map-table { border-collapse: collapse; margin-top: 1em; }
         .map-table td { width: 32px; height: 32px; text-align: center; border: 1px solid #bbb; font-size: 1.2em; }
+        .errorbox { color: red; margin-top: 1em; }
     </style>
 </head>
 <body>
@@ -35,44 +36,65 @@
     <div class="section" id="gameinfo"></div>
     <div class="section" id="gamemap"></div>
     <div id="output">Wähle eine Aktion…</div>
+    <div id="errorbox" class="errorbox"></div>
     <script>
     async function callApi(method, path) {
         const url = document.getElementById('apiurl').value + path;
-        let resp, data;
+        let resp, data, errorMsg = '';
         try {
             resp = await fetch(url, { method });
-            data = await resp.json();
-            setStatus(true);
-            showGameInfo(data);
-            showGameMap(data);
+            const contentType = resp.headers.get('content-type') || '';
+            if (resp.ok && contentType.includes('application/json')) {
+                data = await resp.json();
+                setStatus(true);
+                showGameInfo(data);
+                showGameMap(data);
+                errorMsg = '';
+            } else {
+                setStatus(resp.ok);
+                let text = await resp.text();
+                errorMsg = `Fehler: HTTP ${resp.status} (${resp.statusText})\nContent-Type: ${contentType}\nAntwort: ${text}`;
+                data = { error: errorMsg };
+                showGameInfo(null);
+                showGameMap(null);
+            }
         } catch (e) {
             data = { error: e.toString() };
             setStatus(false);
             showGameInfo(null);
             showGameMap(null);
+            errorMsg = `Fehler: ${e.toString()}`;
         }
         document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+        document.getElementById('errorbox').textContent = errorMsg;
     }
     async function checkApiStatus() {
         const url = document.getElementById('apiurl').value + '/state';
-        let ok = false;
+        let ok = false, errorMsg = '';
         try {
             const resp = await fetch(url);
-            ok = resp.ok;
-            if (ok) {
+            const contentType = resp.headers.get('content-type') || '';
+            if (resp.ok && contentType.includes('application/json')) {
                 const data = await resp.json();
                 showGameInfo(data);
                 showGameMap(data);
+                ok = true;
+                errorMsg = '';
             } else {
+                let text = await resp.text();
+                errorMsg = `Fehler: HTTP ${resp.status} (${resp.statusText})\nContent-Type: ${contentType}\nAntwort: ${text}`;
                 showGameInfo(null);
                 showGameMap(null);
+                ok = resp.ok;
             }
         } catch (e) {
             ok = false;
             showGameInfo(null);
             showGameMap(null);
+            errorMsg = `Fehler: ${e.toString()}`;
         }
         setStatus(ok);
+        document.getElementById('errorbox').textContent = errorMsg;
     }
     function setStatus(ok) {
         const status = document.getElementById('status');
