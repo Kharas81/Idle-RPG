@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.1, pytest-8.4.2, pluggy-1.6.0
+rootdir: /workspaces/Idle-RPG
+configfile: pyproject.toml
+plugins: anyio-4.9.0, cov-7.0.0
+collected 66 items
+
+tests/integration/test_battle_api.py ..                                  [  3%]
+tests/integration/test_equipment_api.py ....                             [  9%]
+tests/integration/test_game_state_api.py .
