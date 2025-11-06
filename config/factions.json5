@@ -5,19 +5,22 @@
     "id": "city_guard",
     "name": "Stadtwache von Startburg",
     "description": "Beschützt die Stadt. Hassen Banditen und Goblins.",
-    "start_reputation": 50
+    "start_reputation": 50,
+    "enemies": ["bandits", "goblins"]
   },
   {
     "id": "bandits",
     "name": "Die Roten Klingen",
     "description": "Banditenkartell. Hassen die Stadtwache.",
-    "start_reputation": -50
+    "start_reputation": -50,
+    "enemies": ["city_guard"]
   },
   {
     "id": "goblins",
     "name": "Goblin-Stamm",
     "description": "Chaotisch. Plündern alles.",
-    "start_reputation": -20
+    "start_reputation": -20,
+    "enemies": ["city_guard"]
   },
   {
     "id": "orcs",

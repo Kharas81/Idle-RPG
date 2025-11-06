@@ -16,17 +16,24 @@ class ReputationManager:
             )
         return self._reputation[character_id]
 
-    def handle_event(self, event_type: str, data: dict):
+    def handle_event(self, event_type, data: dict):
+        # Akzeptiere sowohl EventType-Enum als auch String-Namen
+        try:
+            ev = event_type if isinstance(event_type, EventType) else EventType(event_type)
+        except Exception:
+            # Ungültiger Event-Type -> ignorieren
+            return
+
         # Beispiel: ON_ENEMY_DEFEATED
-        if event_type == EventType.ON_ENEMY_DEFEATED:
-            char_id = data["character_id"]
-            opponent = data["opponent"]  # Dict mit "faction"-Feld
+        if ev == EventType.ON_ENEMY_DEFEATED:
+            char_id = data.get("character_id")
+            opponent = data.get("opponent")  # Dict mit "faction"-Feld
             if not opponent or "faction" not in opponent:
                 return
             defeated_faction = opponent["faction"]
-            # +1 für Feinde der besiegten Fraktion, -1 für besiegte Fraktion
+            # +1 für Fraktionen, die Feinde der besiegten Fraktion sind, -1 für die besiegte Fraktion
             for f_id, faction in self.factions.items():
-                if defeated_faction in faction.enemies:
+                if hasattr(faction, "enemies") and defeated_faction in (faction.enemies or []):
                     self.get_reputation(char_id).change(f_id, +1)
             self.get_reputation(char_id).change(defeated_faction, -1)
 
