@@ -38,7 +38,7 @@ Unit-Tests für TalentService
 """
 
 import pytest
-from rpg_project.src.models.talent import TalentTree
+from rpg_project.src.models.talent import TalentTree, Talent
 from rpg_project.src.services.talent_service import TalentService
 
 # Fixtures und Models werden zentral über conftest.py bereitgestellt

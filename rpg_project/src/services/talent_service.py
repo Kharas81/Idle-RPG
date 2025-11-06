@@ -25,6 +25,12 @@ class TalentService:
     def learn_talent(self, character: Character, talent_id: str) -> bool:
         if not self.can_learn(character, talent_id):
             return False
+        # Prüfe, ob stat_bonus angewendet werden soll, aber keine Stats vorhanden sind
+        talent = self.talent_tree.talents.get(talent_id)
+        if talent:
+            for effect in talent.effects:
+                if effect.effect_type == "stat_bonus" and (not hasattr(character, "stats") or character.stats is None):
+                    return False
         if not hasattr(character, "talents"):
             character.talents = []
         character.talents.append(talent_id)
@@ -36,11 +42,17 @@ class TalentService:
         if not talent:
             return
         for effect in talent.effects:
+            # Effektziel muss gesetzt sein
             if effect.effect_type == "stat_bonus":
-                character.stats[effect.target] = character.stats.get(effect.target, 0) + int(effect.value)
+                if effect.target is not None and effect.value is not None:
+                    # Nur int/float als stat_bonus zulassen
+                    if isinstance(effect.value, (int, float)):
+                        character.stats[effect.target] = character.stats.get(effect.target, 0) + int(effect.value)
             elif effect.effect_type == "percent_bonus":
-                # Für Skills: z.B. +10% Feuerschaden
-                if not hasattr(character, "percent_bonuses"):
-                    character.percent_bonuses = {}
-                character.percent_bonuses[effect.target] = character.percent_bonuses.get(effect.target, 0) + effect.value
+                if effect.target is not None and effect.value is not None:
+                    # Nur float als percent_bonus zulassen
+                    if isinstance(effect.value, float):
+                        if not hasattr(character, "percent_bonuses"):
+                            character.percent_bonuses = {}
+                        character.percent_bonuses[effect.target] = character.percent_bonuses.get(effect.target, 0) + effect.value
             # Weitere Effekttypen können ergänzt werden

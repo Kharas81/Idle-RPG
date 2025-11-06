@@ -1,3 +1,5 @@
+import sys
+import os
 def test_craft_with_empty_inventory(recipes, dummy_player_factory):
     player = dummy_player_factory([])
     service = CraftingService(recipes)

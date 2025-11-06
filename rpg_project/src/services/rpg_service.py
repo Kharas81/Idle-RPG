@@ -1,4 +1,4 @@
-import json
+import json5
 import os
 from typing import Any
 
@@ -16,7 +16,7 @@ class RPGService:
 
     def _load_xp_curve(self, path: str):
         with open(path, encoding="utf-8") as f:
-            data = json.load(f)
+            data = json5.load(f)
         return data.get("xp_curve", [0, 100, 300, 600, 1000])  # Default XP-Kurve
 
     def handle_event(self, event: str, character: Character, data: dict[str, Any]) -> Character:
