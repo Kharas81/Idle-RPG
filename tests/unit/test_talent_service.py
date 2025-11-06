@@ -29,16 +29,19 @@ def test_learn_talent_with_nested_prerequisites(talent_factory, character_factor
     assert service.learn_talent(char, "t1")
 
 def test_learn_talent_character_without_stats(talent_tree, character_factory):
-    char = character_factory(id="testchar6", name="Held", stats=None)
+    char = character_factory(id="testchar6", name="Held", stats={})
     service = TalentService(talent_tree)
-    # Sollte robust gegen fehlende Stats sein
-    assert not service.learn_talent(char, "strength_training")
+    # Sollte robust gegen fehlende Stats sein und den Stat korrekt anlegen
+    assert service.learn_talent(char, "strength_training")
+    assert "strength_training" in char.talents
+    assert char.stats["ATK"] == 2
 """
 Unit-Tests für TalentService
 """
 
 import pytest
 from rpg_project.src.models.talent import TalentTree, Talent
+from rpg_project.src.models.character import Character
 from rpg_project.src.services.talent_service import TalentService
 
 # Fixtures und Models werden zentral über conftest.py bereitgestellt

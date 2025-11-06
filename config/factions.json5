@@ -1,0 +1,64 @@
+
+// Fraktionen aus GDD 4, S17
+[
+  {
+    "id": "city_guard",
+    "name": "Stadtwache von Startburg",
+    "description": "Beschützt die Stadt. Hassen Banditen und Goblins.",
+    "start_reputation": 50
+  },
+  {
+    "id": "bandits",
+    "name": "Die Roten Klingen",
+    "description": "Banditenkartell. Hassen die Stadtwache.",
+    "start_reputation": -50
+  },
+  {
+    "id": "goblins",
+    "name": "Goblin-Stamm",
+    "description": "Chaotisch. Plündern alles.",
+    "start_reputation": -20
+  },
+  {
+    "id": "orcs",
+    "name": "Ork-Clan",
+    "description": "Stark und diszipliniert. Oft im Krieg mit Menschen.",
+    "start_reputation": -30
+  },
+  {
+    "id": "undead",
+    "name": "Die Ruhelosen",
+    "description": "Skelette, Geister und Nekromanten. Hassen alles Lebende.",
+    "start_reputation": -100
+  },
+  {
+    "id": "constructs",
+    "name": "Konstrukte",
+    "description": "Magische Golems. Dienen ihren Erbauern loyal.",
+    "start_reputation": 0
+  },
+  {
+    "id": "dwarven_guild",
+    "name": "Zwergen-Gilde",
+    "description": "Neutrale Bergleute und Handwerker.",
+    "start_reputation": 0
+  },
+  {
+    "id": "beasts",
+    "name": "Wildtiere",
+    "description": "Neutrale Tiere des Waldes.",
+    "start_reputation": 0
+  },
+  {
+    "id": "elementals",
+    "name": "Elementare",
+    "description": "Chaotisch-neutrale Geister der Natur.",
+    "start_reputation": -10
+  },
+  {
+    "id": "harpyien",
+    "name": "Harpyien-Schwarm",
+    "description": "Aggressive, diebische Kreaturen.",
+    "start_reputation": -15
+  }
+]

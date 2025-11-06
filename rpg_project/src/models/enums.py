@@ -1,4 +1,7 @@
 from enum import Enum
+class EventType(str, Enum):
+    ON_ENEMY_DEFEATED = "ON_ENEMY_DEFEATED"
+from enum import Enum
 
 
 class ItemType(Enum):

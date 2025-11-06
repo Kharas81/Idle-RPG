@@ -25,28 +25,40 @@ class TalentService:
     def learn_talent(self, character: Character, talent_id: str) -> bool:
         if not self.can_learn(character, talent_id):
             return False
-        # Prüfe, ob stat_bonus angewendet werden soll, aber keine Stats vorhanden sind
+        # Explizite Prüfung: Wenn stats zu Beginn None, kein stat_bonus-Talent lernen
+        if hasattr(character, "stats") and character.stats is None:
+            talent = self.talent_tree.talents.get(talent_id)
+            if talent:
+                for effect in talent.effects:
+                    if effect.effect_type == "stat_bonus":
+                        return False
         talent = self.talent_tree.talents.get(talent_id)
+        # Prüfe, ob alle Effekte angewendet werden können
         if talent:
             for effect in talent.effects:
-                if effect.effect_type == "stat_bonus" and (not hasattr(character, "stats") or character.stats is None):
-                    return False
+                if effect.effect_type == "stat_bonus":
+                    if not hasattr(character, "stats") or character.stats is None:
+                        return False
         if not hasattr(character, "talents"):
             character.talents = []
+        # Effekte anwenden und prüfen, ob sie erfolgreich waren
+        if not self.apply_talent_effects(character, talent_id):
+            return False
         character.talents.append(talent_id)
-        self.apply_talent_effects(character, talent_id)
         return True
 
-    def apply_talent_effects(self, character: Character, talent_id: str):
+    def apply_talent_effects(self, character: Character, talent_id: str) -> bool:
         talent = self.talent_tree.talents.get(talent_id)
         if not talent:
-            return
+            return False
         for effect in talent.effects:
             # Effektziel muss gesetzt sein
             if effect.effect_type == "stat_bonus":
                 if effect.target is not None and effect.value is not None:
                     # Nur int/float als stat_bonus zulassen
                     if isinstance(effect.value, (int, float)):
+                        if not hasattr(character, "stats") or character.stats is None:
+                            return False
                         character.stats[effect.target] = character.stats.get(effect.target, 0) + int(effect.value)
             elif effect.effect_type == "percent_bonus":
                 if effect.target is not None and effect.value is not None:
@@ -56,3 +68,4 @@ class TalentService:
                             character.percent_bonuses = {}
                         character.percent_bonuses[effect.target] = character.percent_bonuses.get(effect.target, 0) + effect.value
             # Weitere Effekttypen können ergänzt werden
+        return True
