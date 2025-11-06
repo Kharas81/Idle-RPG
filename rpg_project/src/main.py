@@ -3,6 +3,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from rpg_project.src.api import router as api_router
+from rpg_project.src.api import dialogue
+from rpg_project.src.api import pet
 
 app = FastAPI()
 app.add_middleware(
@@ -13,6 +15,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(api_router)
+app.include_router(dialogue.router)
+app.include_router(pet.router)
 
 # Optional: GameLoop als Funktion erhalten
 def run_gameloop():

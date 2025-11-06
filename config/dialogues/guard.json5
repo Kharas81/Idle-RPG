@@ -1,0 +1,33 @@
+{
+  // Beispiel-Dialog für einen Stadtwachen-NPC
+  npc_id: "guard",
+  start_id: "start",
+  nodes: [
+    {
+      id: "start",
+      npc_text: "Halt! Was führt dich in unsere Stadt?",
+      options: [
+        { id: "ask_quest", text: "Gibt es Arbeit für einen Abenteurer?", next_id: "quest_offer" },
+        { id: "just_passing", text: "Ich bin nur auf der Durchreise.", next_id: "end" }
+      ]
+    },
+    {
+      id: "quest_offer",
+      npc_text: "Tatsächlich! Wir suchen jemanden, der die Banditen im Wald vertreibt. Bist du interessiert?",
+      options: [
+        { id: "accept_quest", text: "Ich nehme die Quest an!", quest_id: "bandit_quest", next_id: "accepted" },
+        { id: "decline_quest", text: "Nein, danke.", next_id: "end" }
+      ]
+    },
+    {
+      id: "accepted",
+      npc_text: "Viel Erfolg! Kehre zurück, wenn du die Banditen besiegt hast.",
+      options: [ { id: "end", text: "Auf Wiedersehen.", next_id: "end" } ]
+    },
+    {
+      id: "end",
+      npc_text: "Leb wohl, Reisender.",
+      options: []
+    }
+  ]
+}

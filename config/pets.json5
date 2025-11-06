@@ -1,0 +1,13 @@
+[
+  {
+    id: "wolf_pet",
+    name: "Wolf",
+    type: "Wolf",
+    stats: { hp: 40, atk: 8, defense: 3, speed: 7 },
+    skills: [
+      { id: "bite", name: "Biss", description: "Fügt dem Gegner Schaden zu.", power: 10, cooldown: 1 },
+      { id: "howl", name: "Heulen", description: "Erhöht die eigene Geschwindigkeit.", power: 0, cooldown: 3 }
+    ],
+    ai_policy: "aggressive"
+  }
+]
