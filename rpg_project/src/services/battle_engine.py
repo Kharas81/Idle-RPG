@@ -49,7 +49,8 @@ class BattleStore:
         self.skills = self._load_skills()
 
     def _load_skills(self):
-        path = Path("config/skills.json5")
+        # Nutze die neue, vollständige Skill-Liste
+        path = Path("config/skills_full.json5")
         with path.open("r", encoding="utf-8") as f:
             return json5.load(f)
 
@@ -123,26 +124,53 @@ class BattleStore:
         skill = self.skills.get(skill_name)
         if not skill:
             raise RuntimeError(f"Skill {skill_name} nicht gefunden")
-        # Cooldown prüfen
-        if battle.cooldowns.get(user_id, {}).get(skill_name, 0) > 0:
-            raise RuntimeError("Skill ist im Cooldown")
-        # Kosten prüfen
-        if user.mana < skill.get("cost", 0):
-            raise RuntimeError("Nicht genug Mana")
-        user.mana -= skill.get("cost", 0)
-        # Schaden anwenden
-        if "damage" in skill:
-            dmg = max(1, skill["damage"] - target.defense)
-            target.hp = max(0, target.hp - dmg)
-        # Heilung
-        if "heal" in skill:
-            user.hp = min(user.max_hp, user.hp + skill["heal"])
-        # Effekte anwenden
-        for eff in skill.get("effects", []):
-            effect = Effect(**eff)
-            target.effects.append(effect)
-        # Cooldown setzen
-        battle.cooldowns.setdefault(user_id, {})[skill_name] = skill.get("cooldown", 0)
+        # Kosten prüfen (Mana/Stamina)
+        costs = skill.get("costs")
+        if costs:
+            if costs["type"].lower() == "mana":
+                if user.mana < costs["amount"]:
+                    raise RuntimeError("Nicht genug Mana")
+                user.mana -= costs["amount"]
+            elif costs["type"].lower() == "stamina":
+                # Falls Stamina implementiert ist, hier abziehen
+                pass
+        # Effekte interpretieren
+        for eff in skill.get("effekte", []):
+            typ = eff.get("type")
+            if typ == "damage":
+                # Multiplikator oder fixer Wert
+                if "multiplier" in eff:
+                    # Eval mit Vorsicht, nur auf user-Attribute
+                    try:
+                        multiplier = eff["multiplier"]
+                        dmg = eval(str(multiplier), {}, {"self": user})
+                        dmg = int(dmg)
+                    except Exception:
+                        dmg = 1
+                else:
+                    dmg = eff.get("amount", 0)
+                # Damage-Type und Defense berücksichtigen
+                dmg = max(1, dmg - getattr(target, "defense", 0))
+                target.hp = max(0, target.hp - dmg)
+            elif typ == "heal":
+                amount = eff.get("amount", 0)
+                user.hp = min(user.max_hp, user.hp + amount)
+            elif typ == "apply_effect":
+                # Status-Effekt auf Ziel anwenden
+                effect_id = eff.get("effect_id", "")
+                duration = eff.get("duration", 1)
+                # Name aus effect_id ableiten
+                effect = Effect(name=effect_id.capitalize(), duration=duration)
+                target.effects.append(effect)
+            elif typ == "apply_effect_self":
+                effect_id = eff.get("effect_id", "")
+                duration = eff.get("duration", 1)
+                effect = Effect(name=effect_id.capitalize(), duration=duration)
+                user.effects.append(effect)
+            # Weitere Typen wie apply_effect_aoe, etc. können hier ergänzt werden
+        # Cooldown setzen (optional, falls in Daten vorhanden)
+        if "cooldown" in skill:
+            battle.cooldowns.setdefault(user_id, {})[skill_name] = skill["cooldown"]
         # Rundenwechsel wie bei step
         if target.hp <= 0:
             battle.state = BattleState.FINISHED

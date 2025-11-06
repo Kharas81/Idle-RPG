@@ -1,3 +1,29 @@
 {
-  "xp_curve": [0, 100, 300, 600, 1000, 1500, 2100]
+  // XP-Kurve für Level 1-10 (GDD 4)
+  "xp_curve": [0, 100, 250, 500, 850, 1300, 1900, 2700, 3800, 5000],
+  // XP-Formel als Referenz (ab Level 10): (Level^2.2) * 40 + 60
+  "xp_formula": "(level ** 2.2) * 40 + 60",
+  // Heldenklassen mit Startwerten und Berufsvorschlägen
+  "classes": {
+    "Krieger": {
+      "description": "Ein robuster Nahkämpfer, der sich auf Stärke und Verteidigung verlässt.",
+      "start_stats": {"atk": 12, "def": 10, "int": 5, "spd": 8},
+      "professions": ["Schmiedekunst", "Alchemie"]
+    },
+    "Magier": {
+      "description": "Ein fragiler, aber mächtiger Fernkämpfer, der elementare Kräfte nutzt.",
+      "start_stats": {"atk": 5, "def": 6, "int": 15, "spd": 9},
+      "professions": ["Schneiderei", "Alchemie"]
+    },
+    "Schurke": {
+      "description": "Ein schneller und listiger Angreifer, der Gifte, Fallen und Diebstahl nutzt.",
+      "start_stats": {"atk": 9, "def": 8, "int": 7, "spd": 12},
+      "professions": ["Schneiderei", "Alchemie"]
+    },
+    "Kleriker": {
+      "description": "Ein unterstützender Kämpfer, der Heilmagie und defensive Buffs nutzt.",
+      "start_stats": {"atk": 8, "def": 9, "int": 12, "spd": 7},
+      "professions": ["Schmiedekunst", "Schneiderei"]
+    }
+  }
 }

@@ -1,32 +1,277 @@
-// config/talents.json5
-// Beispiel-Talente für den Talentbaum
+// Vollständige Talentbäume für alle Klassen gemäß GDD 4
 {
-  "fire_mastery": {
-    "id": "fire_mastery",
-    "name": "Feuermagie-Meisterschaft",
-    "description": "+10% Feuerschaden für alle Feuer-Skills.",
+  // Krieger
+  "warrior_robust_1": {
+    "id": "warrior_robust_1",
+    "class": "Krieger",
+    "tier": 1,
+    "name": "+10% Max HP",
+    "description": "+10% maximale Lebenspunkte (Passiv)",
+    "effects": [{"effect_type": "percent_bonus", "target": "max_hp", "value": 0.10}],
+    "prerequisites": []
+  },
+  "warrior_weapon_1": {
+    "id": "warrior_weapon_1",
+    "class": "Krieger",
+    "tier": 1,
+    "name": "+5% Physischer Schaden",
+    "description": "+5% physischer Schaden (Passiv)",
+    "effects": [{"effect_type": "percent_bonus", "target": "physical_damage", "value": 0.05}],
+    "prerequisites": []
+  },
+  "warrior_shield_1": {
+    "id": "warrior_shield_1",
+    "class": "Krieger",
+    "tier": 2,
+    "name": "+10% Verteidigung mit Schild",
+    "description": "+10% Verteidigung, wenn Schild ausgerüstet (Passiv)",
+    "effects": [{"effect_type": "percent_bonus", "target": "defense_with_shield", "value": 0.10}],
+    "prerequisites": ["warrior_robust_1"]
+  },
+  "warrior_skill_1": {
+    "id": "warrior_skill_1",
+    "class": "Krieger",
+    "tier": 2,
+    "name": "Skill: Deep Cut",
+    "description": "Schaltet Skill skill_deep_cut frei (verursacht Bluten)",
+    "effects": [{"effect_type": "unlock_skill", "target": "skill_deep_cut"}],
+    "prerequisites": ["warrior_weapon_1"]
+  },
+  "warrior_speed_1": {
+    "id": "warrior_speed_1",
+    "class": "Krieger",
+    "tier": 2,
+    "name": "+10% Geschwindigkeit",
+    "description": "+10% Geschwindigkeit (Passiv)",
+    "effects": [{"effect_type": "percent_bonus", "target": "speed", "value": 0.10}],
+    "prerequisites": ["warrior_robust_1"]
+  },
+  "warrior_defense_2": {
+    "id": "warrior_defense_2",
+    "class": "Krieger",
+    "tier": 3,
+    "name": "+50% Verteidigung durch Defensive Stance",
+    "description": "+50% Verteidigung durch skill_defensive_stance (Skill-Verbesserung)",
+    "effects": [{"effect_type": "skill_upgrade", "target": "skill_defensive_stance", "value": "+50% DEF"}],
+    "prerequisites": ["warrior_shield_1"]
+  },
+  "warrior_skill_2": {
+    "id": "warrior_skill_2",
+    "class": "Krieger",
+    "tier": 3,
+    "name": "Skill: Whirlwind",
+    "description": "Schaltet Skill skill_whirlwind frei",
+    "effects": [{"effect_type": "unlock_skill", "target": "skill_whirlwind"}],
+    "prerequisites": ["warrior_skill_1"]
+  },
+
+  // Magier
+  "mage_mana_1": {
+    "id": "mage_mana_1",
+    "class": "Magier",
+    "tier": 1,
+    "name": "+10% Max Mana",
+    "description": "+10% maximales Mana (Passiv)",
+    "effects": [{"effect_type": "percent_bonus", "target": "max_mana", "value": 0.10}],
+    "prerequisites": []
+  },
+  "mage_elemental_1": {
+    "id": "mage_elemental_1",
+    "class": "Magier",
+    "tier": 1,
+    "name": "+5% Magieschaden",
+    "description": "+5% Magieschaden (Passiv)",
+    "effects": [{"effect_type": "percent_bonus", "target": "magic_damage", "value": 0.05}],
+    "prerequisites": []
+  },
+  "mage_fire_1": {
+    "id": "mage_fire_1",
+    "class": "Magier",
+    "tier": 2,
+    "name": "+10% Feuerschaden",
+    "description": "+10% Feuerschaden (Beeinflusst skill_fireball)",
+    "effects": [{"effect_type": "percent_bonus", "target": "fire_damage", "value": 0.10}],
+    "prerequisites": ["mage_elemental_1"]
+  },
+  "mage_ice_1": {
+    "id": "mage_ice_1",
+    "class": "Magier",
+    "tier": 2,
+    "name": "Skill: Ice Arrow",
+    "description": "Schaltet Skill skill_ice_arrow frei",
+    "effects": [{"effect_type": "unlock_skill", "target": "skill_ice_arrow"}],
+    "prerequisites": ["mage_elemental_1"]
+  },
+  "mage_mana_2": {
+    "id": "mage_mana_2",
+    "class": "Magier",
+    "tier": 2,
+    "name": "+1 Mana pro Tick",
+    "description": "Stellt 1 Mana pro Tick im Kampf wieder her (Passiv)",
+    "effects": [{"effect_type": "regen_mana", "value": 1}],
+    "prerequisites": ["mage_mana_1"]
+  },
+  "mage_fire_2": {
+    "id": "mage_fire_2",
+    "class": "Magier",
+    "tier": 3,
+    "name": "+20% Brennen-Dauer",
+    "description": "+20% Chance, dass Brennen 2 Runden länger dauert (Passiv)",
+    "effects": [{"effect_type": "burn_duration_bonus", "value": 2, "chance": 0.2}],
+    "prerequisites": ["mage_fire_1"]
+  },
+  "mage_mastery_1": {
+    "id": "mage_mastery_1",
+    "class": "Magier",
+    "tier": 3,
+    "name": "-10% Manakosten",
+    "description": "-10% Manakosten auf alle Skills (Passiv)",
+    "effects": [{"effect_type": "percent_bonus", "target": "mana_cost", "value": -0.10}],
+    "prerequisites": ["mage_mana_2"]
+  },
+  "mage_skill_1": {
+    "id": "mage_skill_1",
+    "class": "Magier",
+    "tier": 3,
+    "name": "Skill: Firestorm",
+    "description": "Schaltet Skill skill_firestorm frei",
+    "effects": [{"effect_type": "unlock_skill", "target": "skill_firestorm"}],
+    "prerequisites": ["mage_fire_2"]
+  },
+
+  // Schurke
+  "rogue_speed_1": {
+    "id": "rogue_speed_1",
+    "class": "Schurke",
+    "tier": 1,
+    "name": "+5% Geschwindigkeit & Ausweichen",
+    "description": "+5% Geschwindigkeit und +5% Ausweichen (Passiv)",
     "effects": [
-      {
-        "effect_type": "percent_bonus",
-        "target": "fire",
-        "value": 0.1,
-        "description": "+10% Feuerschaden"
-      }
+      {"effect_type": "percent_bonus", "target": "speed", "value": 0.05},
+      {"effect_type": "percent_bonus", "target": "evasion", "value": 0.05}
     ],
     "prerequisites": []
   },
-  "strength_training": {
-    "id": "strength_training",
-    "name": "Krafttraining",
-    "description": "+2 Angriff.",
+  "rogue_poison_1": {
+    "id": "rogue_poison_1",
+    "class": "Schurke",
+    "tier": 1,
+    "name": "+10% Giftschaden",
+    "description": "+10% Giftschaden (Passiv)",
+    "effects": [{"effect_type": "percent_bonus", "target": "poison_damage", "value": 0.10}],
+    "prerequisites": []
+  },
+  "rogue_utility_1": {
+    "id": "rogue_utility_1",
+    "class": "Schurke",
+    "tier": 2,
+    "name": "Skill: Stehlen",
+    "description": "Schaltet Skill skill_steal_item frei",
+    "effects": [{"effect_type": "unlock_skill", "target": "skill_steal_item"}],
+    "prerequisites": ["rogue_speed_1"]
+  },
+  "rogue_skill_1": {
+    "id": "rogue_skill_1",
+    "class": "Schurke",
+    "tier": 2,
+    "name": "Skill: Unsichtbarkeit",
+    "description": "Schaltet Skill skill_invisibility frei",
+    "effects": [{"effect_type": "unlock_skill", "target": "skill_invisibility"}],
+    "prerequisites": ["rogue_poison_1"]
+  },
+  "rogue_crit_1": {
+    "id": "rogue_crit_1",
+    "class": "Schurke",
+    "tier": 2,
+    "name": "+5% Kritische Trefferchance",
+    "description": "+5% Kritische Trefferchance (Passiv)",
+    "effects": [{"effect_type": "percent_bonus", "target": "crit_chance", "value": 0.05}],
+    "prerequisites": ["rogue_speed_1"]
+  },
+  "rogue_poison_2": {
+    "id": "rogue_poison_2",
+    "class": "Schurke",
+    "tier": 3,
+    "name": "Skill-Upgrade: Doppeltes Gift",
+    "description": "skill_apply_poison trifft jetzt 2x (Skill-Verbesserung)",
+    "effects": [{"effect_type": "skill_upgrade", "target": "skill_apply_poison", "value": "double_poison"}],
+    "prerequisites": ["rogue_poison_1"]
+  },
+  "rogue_mastery_1": {
+    "id": "rogue_mastery_1",
+    "class": "Schurke",
+    "tier": 3,
+    "name": "Stehlen kostet keine Aktion",
+    "description": "Stehlen kostet keine Aktion (Passiv)",
+    "effects": [{"effect_type": "passive", "target": "steal_free_action", "value": true}],
+    "prerequisites": ["rogue_utility_1"]
+  },
+
+  // Kleriker
+  "cleric_heal_1": {
+    "id": "cleric_heal_1",
+    "class": "Kleriker",
+    "tier": 1,
+    "name": "+10% Heilzauber",
+    "description": "+10% Effekt von Heilzaubern (Passiv)",
+    "effects": [{"effect_type": "percent_bonus", "target": "heal_effect", "value": 0.10}],
+    "prerequisites": []
+  },
+  "cleric_defense_1": {
+    "id": "cleric_defense_1",
+    "class": "Kleriker",
+    "tier": 1,
+    "name": "+5% Verteidigung & Magieresistenz",
+    "description": "+5% Verteidigung und +5% Magieresistenz (Passiv)",
     "effects": [
-      {
-        "effect_type": "stat_bonus",
-        "target": "ATK",
-        "value": 2,
-        "description": "+2 Angriff"
-      }
+      {"effect_type": "percent_bonus", "target": "defense", "value": 0.05},
+      {"effect_type": "percent_bonus", "target": "magic_resist", "value": 0.05}
     ],
     "prerequisites": []
+  },
+  "cleric_utility_1": {
+    "id": "cleric_utility_1",
+    "class": "Kleriker",
+    "tier": 2,
+    "name": "Skill: Regeneration",
+    "description": "Schaltet Skill skill_regeneration frei",
+    "effects": [{"effect_type": "unlock_skill", "target": "skill_regeneration"}],
+    "prerequisites": ["cleric_heal_1"]
+  },
+  "cleric_skill_1": {
+    "id": "cleric_skill_1",
+    "class": "Kleriker",
+    "tier": 2,
+    "name": "Skill: Flächenheilung",
+    "description": "Schaltet Skill skill_heal_area frei (Flächenheilung)",
+    "effects": [{"effect_type": "unlock_skill", "target": "skill_heal_area"}],
+    "prerequisites": ["cleric_heal_1"]
+  },
+  "cleric_buff_1": {
+    "id": "cleric_buff_1",
+    "class": "Kleriker",
+    "tier": 2,
+    "name": "Defensive Stance hält länger",
+    "description": "skill_defensive_stance hält 2 Runden länger (Skill-Verbesserung)",
+    "effects": [{"effect_type": "skill_upgrade", "target": "skill_defensive_stance", "value": "+2 duration"}],
+    "prerequisites": ["cleric_defense_1"]
+  },
+  "cleric_mastery_1": {
+    "id": "cleric_mastery_1",
+    "class": "Kleriker",
+    "tier": 3,
+    "name": "Wiederbeleben billiger",
+    "description": "Wiederbeleben (außerhalb des Kampfes) kostet 50% weniger Mana (Passiv)",
+    "effects": [{"effect_type": "percent_bonus", "target": "revive_mana_cost", "value": -0.5}],
+    "prerequisites": ["cleric_utility_1"]
+  },
+  "cleric_skill_2": {
+    "id": "cleric_skill_2",
+    "class": "Kleriker",
+    "tier": 3,
+    "name": "Skill: Furcht anwenden",
+    "description": "Schaltet Skill skill_apply_fear frei",
+    "effects": [{"effect_type": "unlock_skill", "target": "skill_apply_fear"}],
+    "prerequisites": ["cleric_skill_1"]
   }
 }

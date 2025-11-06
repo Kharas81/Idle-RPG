@@ -1,0 +1,335 @@
+// Generiert aus GDD - 3. Skills & Effekte
+{
+  "basic_attack": {
+    "name": "Basis-Angriff",
+    "class": ["Alle"],
+    "description": "Ein normaler Angriff.",
+    "effekte": [
+      {"type": "damage", "multiplier": "self.atk"}
+    ]
+  },
+  "heavy_smash": {
+    "name": "Schwerer Schlag",
+    "class": ["Krieger"],
+    "costs": {"type": "Stamina", "amount": 10},
+    "description": "Ein langsamer, aber starker Angriff.",
+    "effekte": [
+      {"type": "damage", "multiplier": "self.atk * 1.5"}
+    ]
+  },
+  "quick_strike": {
+    "name": "Schneller Stich",
+    "class": ["Schurke"],
+    "costs": {"type": "Stamina", "amount": 3},
+    "description": "Ein schneller Angriff, der wenig Schaden macht.",
+    "effekte": [
+      {"type": "damage", "multiplier": "self.atk * 0.8"}
+    ]
+  },
+  "skill_arrow_shot": {
+    "name": "Pfeilschuss",
+    "class": ["Schurke"],
+    "costs": {"type": "Stamina", "amount": 5},
+    "description": "Ein Standard-Fernkampfangriff.",
+    "effekte": [
+      {"type": "damage", "multiplier": "self.atk * 1.0"}
+    ]
+  },
+  "skill_fireball": {
+    "name": "Feuerball",
+    "class": ["Magier"],
+    "costs": {"type": "Mana", "amount": 10},
+    "description": "Verursacht Feuerschaden und verbrennt das Ziel.",
+    "effekte": [
+      {"type": "damage", "amount": 20, "damage_type": "Fire"},
+      {"type": "apply_effect", "effect_id": "burn", "duration": 3}
+    ]
+  },
+  "skill_heal_light": {
+    "name": "Leichte Heilung",
+    "class": ["Kleriker"],
+    "costs": {"type": "Mana", "amount": 15},
+    "description": "Heilt ein einzelnes Ziel.",
+    "effekte": [
+      {"type": "heal", "amount": 40}
+    ]
+  },
+  "skill_shield_bash": {
+    "name": "Schildschlag",
+    "class": ["Krieger", "Kleriker"],
+    "costs": {"type": "Stamina", "amount": 5},
+    "description": "Verursacht Schaden basierend auf DEF, kann lähmen.",
+    "effekte": [
+      {"type": "damage", "multiplier": "self.def * 0.5"},
+      {"type": "apply_effect", "effect_id": "stun", "duration": 1, "chance": 0.5}
+    ]
+  },
+  "skill_defensive_stance": {
+    "name": "Verteidigungshaltung",
+    "class": ["Krieger", "Kleriker"],
+    "costs": {"type": "Stamina", "amount": 5},
+    "description": "Erhöht die eigene Verteidigung.",
+    "effekte": [
+      {"type": "apply_effect_self", "effect_id": "def_up", "duration": 3}
+    ]
+  },
+  "skill_war_cry": {
+    "name": "Kriegsruf",
+    "class": ["Krieger"],
+    "costs": {"type": "Mana", "amount": 15},
+    "description": "Erhöht den Angriff aller Verbündeten.",
+    "effekte": [
+      {"type": "apply_effect_aoe", "target": "ALLIES", "effect_id": "atk_up", "duration": 3}
+    ]
+  },
+  "skill_intimidating_shout": {
+    "name": "Einschüchternder Ruf",
+    "class": ["Krieger"],
+    "costs": {"type": "Mana", "amount": 10},
+    "description": "Senkt die Verteidigung aller Gegner.",
+    "effekte": [
+      {"type": "apply_effect_aoe", "target": "ENEMIES", "effect_id": "def_down", "duration": 3}
+    ]
+  },
+  "skill_apply_poison": {
+    "name": "Gift auftragen",
+    "class": ["Schurke"],
+    "costs": {"type": "Mana", "amount": 10},
+    "description": "Vergiftet ein einzelnes Ziel.",
+    "effekte": [
+      {"type": "apply_effect", "effect_id": "poison", "duration": 4}
+    ]
+  },
+  "skill_throw_net": {
+    "name": "Netz werfen",
+    "class": ["Schurke"],
+    "costs": {"type": "Stamina", "amount": 5},
+    "description": "Wirft ein Netz, das ein Ziel lähmt.",
+    "effekte": [
+      {"type": "apply_effect", "effect_id": "stun", "duration": 2}
+    ]
+  },
+  "skill_ice_arrow": {
+    "name": "Eispfeil",
+    "class": ["Magier"],
+    "costs": {"type": "Mana", "amount": 8},
+    "description": "Verursacht Eisschaden und verlangsamt das Ziel.",
+    "effekte": [
+      {"type": "damage", "amount": 10, "damage_type": "Ice"},
+      {"type": "apply_effect", "effect_id": "slow", "duration": 3}
+    ]
+  },
+  "skill_mana_burn": {
+    "name": "Manabrand",
+    "class": ["Magier", "Schurke"],
+    "costs": {"type": "Mana", "amount": 5},
+    "description": "Verbrennt 25 Mana des Ziels.",
+    "effekte": [
+      {"type": "damage_resource", "resource": "mana", "amount": 25}
+    ]
+  },
+  "skill_summon_skeleton": {
+    "name": "Skelett beschwören",
+    "class": ["Magier"],
+    "costs": {"type": "Mana", "amount": 20},
+    "description": "Beschwört ein schwaches Skelett.",
+    "effekte": [
+      {"type": "summon", "entity_id": "skeleton_warrior", "max_summons": 2}
+    ]
+  },
+  "skill_steal_gold": {
+    "name": "Gold stehlen",
+    "class": ["Schurke"],
+    "costs": {"type": "Stamina", "amount": 0},
+    "description": "Stiehlt dem Ziel Gold.",
+    "effekte": [
+      {"type": "steal", "resource": "gold", "min": 5, "max": 15}
+    ]
+  },
+  "skill_poison_sting": {
+    "name": "Giftstachel",
+    "class": ["Schurke"],
+    "costs": {"type": "Stamina", "amount": 5},
+    "description": "Verursacht geringen Schaden und vergiftet.",
+    "effekte": [
+      {"type": "damage", "amount": 3, "damage_type": "Nature"},
+      {"type": "apply_effect", "effect_id": "poison", "duration": 4}
+    ]
+  },
+  "skill_steal_item": {
+    "name": "Gegenstand stehlen",
+    "class": ["Schurke"],
+    "costs": {"type": "Stamina", "amount": 0},
+    "description": "Stiehlt dem Ziel einen zufälligen 'Consumable'.",
+    "effekte": [
+      {"type": "steal_item", "item_type": "Consumable", "chance": 0.3}
+    ]
+  },
+  "skill_life_drain": {
+    "name": "Lebensentzug",
+    "class": ["Magier", "Kleriker"],
+    "costs": {"type": "Mana", "amount": 10},
+    "description": "Verursacht 10 Schaden und heilt um denselben Betrag.",
+    "effekte": [
+      {"type": "damage", "amount": 10},
+      {"type": "heal", "amount": 10}
+    ]
+  },
+  "skill_deep_cut": {
+    "name": "Tiefer Schnitt",
+    "class": ["Krieger", "Schurke"],
+    "costs": {"type": "Stamina", "amount": 10},
+    "description": "Verursacht Schaden und 'Bluten'.",
+    "effekte": [
+      {"type": "damage", "multiplier": "self.atk * 1.2"},
+      {"type": "apply_effect", "effect_id": "bleed", "duration": 3}
+    ]
+  },
+  "skill_whirlwind": {
+    "name": "Wirbelwind",
+    "class": ["Krieger"],
+    "costs": {"type": "Stamina", "amount": 20},
+    "description": "Greift alle nahen Gegner an.",
+    "effekte": [
+      {"type": "damage_aoe", "target": "ENEMIES", "multiplier": "self.atk * 0.8"}
+    ]
+  },
+  "skill_taunt": {
+    "name": "Spott",
+    "class": ["Krieger"],
+    "costs": {"type": "Mana", "amount": 5},
+    "description": "Zwingt alle Gegner, den Anwender anzugreifen.",
+    "effekte": [
+      {"type": "apply_effect_self", "effect_id": "taunting", "duration": 2}
+    ]
+  },
+  "skill_regeneration": {
+    "name": "Regeneration",
+    "class": ["Kleriker"],
+    "costs": {"type": "Mana", "amount": 15},
+    "description": "Heilt 20 HP pro Runde für 4 Runden.",
+    "effekte": [
+      {"type": "apply_effect_self", "effect_id": "regen_hp", "duration": 4}
+    ]
+  },
+  "skill_berserk_rage": {
+    "name": "Berserkerwut",
+    "class": ["Krieger"],
+    "costs": {"type": "HP", "amount": "10%"},
+    "description": "Nur unter 30% HP. Erhöht ATK massiv, senkt DEF.",
+    "effekte": [
+      {"type": "apply_effect_self", "effect_id": "atk_up_major", "duration": 3}
+    ]
+  },
+  "skill_lightning_bolt": {
+    "name": "Blitzschlag",
+    "class": ["Magier"],
+    "costs": {"type": "Mana", "amount": 15},
+    "description": "Trifft ein Ziel, kann lähmen.",
+    "effekte": [
+      {"type": "damage", "amount": 50, "damage_type": "Lightning"},
+      {"type": "apply_effect", "effect_id": "stun", "duration": 1, "chance": 0.2}
+    ]
+  },
+  "skill_apply_fear": {
+    "name": "Furcht einflößen",
+    "class": ["Kleriker", "Schurke"],
+    "costs": {"type": "Mana", "amount": 20},
+    "description": "Lässt ein Ziel 2 Runden lang aussetzen.",
+    "effekte": [
+      {"type": "apply_effect", "effect_id": "fear", "duration": 2}
+    ]
+  },
+  "skill_summon_harpy": {
+    "name": "Harpyie beschwören",
+    "class": ["Magier"],
+    "costs": {"type": "Mana", "amount": 30},
+    "description": "Beschwört eine Harpyie.",
+    "effekte": [
+      {"type": "summon", "entity_id": "cliff_harpy", "max_summons": 1}
+    ]
+  },
+  "skill_pillage": {
+    "name": "Plündern",
+    "class": ["Schurke"],
+    "costs": {"type": "Stamina", "amount": 10},
+    "description": "Verursacht Schaden, nächste Aktion ist steal_item.",
+    "effekte": [
+      {"type": "damage", "multiplier": "self.atk * 1.0"},
+      {"type": "apply_effect_self", "effect_id": "steal_item_chance", "duration": 1}
+    ]
+  },
+  "skill_heal_medium": {
+    "name": "Mittlere Heilung",
+    "class": ["Kleriker"],
+    "costs": {"type": "Mana", "amount": 30},
+    "description": "Heilt ein einzelnes Ziel.",
+    "effekte": [
+      {"type": "heal", "amount": 150}
+    ]
+  },
+  "skill_firestorm": {
+    "name": "Feuersturm",
+    "class": ["Magier"],
+    "costs": {"type": "Mana", "amount": 40},
+    "description": "Trifft alle Gegner mit Feuer.",
+    "effekte": [
+      {"type": "damage_aoe", "target": "ENEMIES", "amount": 80, "damage_type": "Fire"},
+      {"type": "apply_effect", "effect_id": "burn", "duration": 3}
+    ]
+  },
+  "skill_invisibility": {
+    "name": "Unsichtbarkeit",
+    "class": ["Schurke"],
+    "costs": {"type": "Mana", "amount": 25},
+    "description": "Macht 3 Runden unsichtbar (bricht bei Angriff).",
+    "effekte": [
+      {"type": "apply_effect_self", "effect_id": "invisible", "duration": 3}
+    ]
+  },
+  "skill_on_death_explode": {
+    "name": "Explosion bei Tod",
+    "class": ["Alle (Gegner)"],
+    "description": "Passiv: Explodiert bei Tod.",
+    "effekte": [
+      {"type": "on_death_trigger", "effect": {"type": "damage_aoe", "amount": 30}}
+    ]
+  },
+  "skill_summon_orc_raider": {
+    "name": "Ork-Plünderer rufen",
+    "class": ["Magier (Gegner)"],
+    "costs": {"type": "Mana", "amount": 40},
+    "description": "Beschwört einen Ork-Plünderer.",
+    "effekte": [
+      {"type": "summon", "entity_id": "orc_raider", "max_summons": 2}
+    ]
+  },
+  "skill_heal_area": {
+    "name": "Flächenheilung",
+    "class": ["Kleriker"],
+    "costs": {"type": "Mana", "amount": 50},
+    "description": "Heilt alle Verbündeten um 100 HP.",
+    "effekte": [
+      {"type": "heal_aoe", "target": "ALLIES", "amount": 100}
+    ]
+  },
+  "skill_meteor": {
+    "name": "Meteor",
+    "class": ["Magier"],
+    "costs": {"type": "Mana", "amount": 80},
+    "description": "Verursacht massiven Feuerschaden und lähmt.",
+    "effekte": [
+      {"type": "damage_aoe", "target": "ENEMIES", "amount": 300, "damage_type": "Fire"},
+      {"type": "apply_effect", "effect_id": "stun", "duration": 1}
+    ]
+  },
+  "skill_time_stop": {
+    "name": "Zeitstopp",
+    "class": ["Magier (Legendär)"],
+    "costs": {"type": "Mana", "amount": 100},
+    "description": "Lähmt alle Gegner für 2 Runden.",
+    "effekte": [
+      {"type": "apply_effect_aoe", "target": "ENEMIES", "effect_id": "stun", "duration": 2}
+    ]
+  }
+}

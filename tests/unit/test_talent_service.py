@@ -1,29 +1,70 @@
-"""Unit-Tests für TalentService
-"""
-import pytest
+def test_learn_invalid_talent_name(talent_tree, character):
+    service = TalentService(talent_tree)
+    assert not service.learn_talent(character, "unbekanntes_talent")
 
-from rpg_project.src.models.character import Character
-from rpg_project.src.models.talent import Talent, TalentEffect, TalentTree
+def test_learn_talent_with_cycle(talent_factory, character_factory):
+    # Zyklische Voraussetzungen: t1 -> t2 -> t1
+    t1 = talent_factory(id="t1", name="A", description="", effect_type="stat_bonus", target="ATK", value=1, prerequisites=["t2"])
+    t2 = talent_factory(id="t2", name="B", description="", effect_type="stat_bonus", target="ATK", value=1, prerequisites=["t1"])
+    tree = TalentTree(talents={"t1": t1, "t2": t2})
+    char = character_factory(id="testchar4", name="Held", stats={"ATK": 1})
+    service = TalentService(tree)
+    # Sollte nicht erlernbar sein, da Zyklus
+    assert not service.learn_talent(char, "t1")
+    assert not service.learn_talent(char, "t2")
+
+def test_learn_talent_with_nested_prerequisites(talent_factory, character_factory):
+    # Verschachtelte Voraussetzungen: t1 -> t2 -> t3
+    t3 = talent_factory(id="t3", name="C", description="", effect_type="stat_bonus", target="ATK", value=1)
+    t2 = talent_factory(id="t2", name="B", description="", effect_type="stat_bonus", target="ATK", value=1, prerequisites=["t3"])
+    t1 = talent_factory(id="t1", name="A", description="", effect_type="stat_bonus", target="ATK", value=1, prerequisites=["t2"])
+    tree = TalentTree(talents={"t1": t1, "t2": t2, "t3": t3})
+    char = character_factory(id="testchar5", name="Held", stats={"ATK": 1})
+    service = TalentService(tree)
+    # t1 nicht ohne t2, t2 nicht ohne t3
+    assert not service.learn_talent(char, "t1")
+    assert not service.learn_talent(char, "t2")
+    assert service.learn_talent(char, "t3")
+    assert service.learn_talent(char, "t2")
+    assert service.learn_talent(char, "t1")
+
+def test_learn_talent_character_without_stats(talent_tree, character_factory):
+    char = character_factory(id="testchar6", name="Held", stats=None)
+    service = TalentService(talent_tree)
+    # Sollte robust gegen fehlende Stats sein
+    assert not service.learn_talent(char, "strength_training")
+"""
+Unit-Tests für TalentService
+"""
+
+import pytest
+from rpg_project.src.models.talent import TalentTree
 from rpg_project.src.services.talent_service import TalentService
+
+# Fixtures und Models werden zentral über conftest.py bereitgestellt
 
 
 @pytest.fixture
-def fire_mastery_talent():
-    return Talent(
+def fire_mastery_talent(talent_factory):
+    return talent_factory(
         id="fire_mastery",
         name="Feuermagie-Meisterschaft",
         description="+10% Feuerschaden für alle Feuer-Skills.",
-        effects=[TalentEffect(effect_type="percent_bonus", target="fire", value=0.1)],
+        effect_type="percent_bonus",
+        target="fire",
+        value=0.1,
         prerequisites=[],
     )
 
 @pytest.fixture
-def strength_training_talent():
-    return Talent(
+def strength_training_talent(talent_factory):
+    return talent_factory(
         id="strength_training",
         name="Krafttraining",
         description="+2 Angriff.",
-        effects=[TalentEffect(effect_type="stat_bonus", target="ATK", value=2)],
+        effect_type="stat_bonus",
+        target="ATK",
+        value=2,
         prerequisites=[],
     )
 
@@ -35,8 +76,8 @@ def talent_tree(fire_mastery_talent, strength_training_talent):
     })
 
 @pytest.fixture
-def character():
-    return Character(id="testchar2", name="Held", stats={"ATK": 5}, equipment={})
+def character(character_factory):
+    return character_factory(id="testchar2", name="Held", stats={"ATK": 5}, equipment={})
 
 def test_learn_stat_bonus_talent(talent_tree, character):
     service = TalentService(talent_tree)
