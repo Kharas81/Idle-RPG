@@ -1,4 +1,3 @@
-
 from typing import Any, Optional, Dict
 from fastapi import APIRouter, HTTPException, Body
 from pydantic import BaseModel
@@ -58,24 +57,20 @@ def new_session(req: NewSessionRequest):
     session_manager.new_session(req.session_id, req.initial_state)
     return {"status": "ok", "msg": f"Session {req.session_id} created."}
 
+
 @router.post("/session/save")
 def save_session(req: SaveSessionRequest):
+    if session_manager.load_session(req.session_id) is None:
+        raise HTTPException(status_code=404, detail="Session not found")
     session_manager.save_session(req.session_id, req.state)
     return {"status": "ok", "msg": f"Session {req.session_id} saved."}
+
 
 @router.get("/session/load")
 def load_session(session_id: str):
     state = session_manager.load_session(session_id)
     if state is None:
         raise HTTPException(status_code=404, detail="Session not found")
-    return {"status": "ok", "session_id": session_id, "state": state}
+    return {"status": "ok", "state": state}
 
-
-class LoginRequest(BaseModel):
-    username: str
-
-class LogoutRequest(BaseModel):
-    username: str
-
-@router.post("/session/login")
 

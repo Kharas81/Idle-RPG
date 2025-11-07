@@ -1,0 +1,6 @@
+// Regeln für die prozedurale Dungeon-Generierung
+{
+  width: 10,
+  height: 10,
+  num_rooms: 6
+}
