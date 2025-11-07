@@ -25,5 +25,13 @@
       "start_stats": {"atk": 8, "def": 9, "int": 12, "spd": 7},
       "professions": ["Schmiedekunst", "Schneiderei"]
     }
+
+  },
+  // Regeln für Offline-Fortschritt
+  "offline_progress": {
+    "xp_per_minute": 2,
+    "gold_per_minute": 1,
+    "resources_per_minute": 0,
+    "max_offline_minutes": 720
   }
 }
