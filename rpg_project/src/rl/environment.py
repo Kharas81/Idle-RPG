@@ -14,7 +14,7 @@ class RpgEnv(gym.Env):
         self.action_space = spaces.Discrete(4)  # 0=hoch, 1=runter, 2=links, 3=rechts
         self.observation_space = spaces.Box(low=0, high=self.grid_size-1, shape=(2,), dtype=np.int32)  # [x, y]
         self.state = np.array([0, 0], dtype=np.int32)  # Startposition oben links
-        self.resources = {(1, 1), (3, 2), (4, 4)}  # Ressourcenpunkte
+        self.resources = [(1, 1), (3, 2), (4, 4)]  # Ressourcenpunkte als sortierte Liste
         self.collected = set()
         self.max_steps = 50
         self.steps = 0
@@ -24,6 +24,7 @@ class RpgEnv(gym.Env):
         super().reset(seed=seed)
         self.state = np.array([0, 0], dtype=np.int32)
         self.collected = set()
+        self.resources = [(1, 1), (3, 2), (4, 4)]  # Ressourcenpunkte bei jedem Reset neu setzen
         self.steps = 0
         return self.state.copy(), {}
 
@@ -43,11 +44,10 @@ class RpgEnv(gym.Env):
         reward = 0
         done = False
         info = {}
-        # Sammel-Logik: Ressourcen werden nur gesammelt, wenn Agent exakt auf dem Punkt steht
-        for res in self.resources:
-            if (x, y) == res and res not in self.collected:
-                self.collected.add(res)
-                reward += 10
+        # Sammel-Logik: Ressourcen werden gesammelt, wenn Agent exakt auf dem Punkt steht
+        if (x, y) in self.resources and (x, y) not in self.collected:
+            self.collected.add((x, y))
+            reward += 10
         if len(self.collected) == len(self.resources):
             done = True
             info["success"] = True
