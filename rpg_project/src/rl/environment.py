@@ -12,22 +12,24 @@ class RpgEnv(gym.Env):
     def __init__(self, config=None):
         self.grid_size = 5
         self.action_space = spaces.Discrete(4)  # 0=hoch, 1=runter, 2=links, 3=rechts
-        self.observation_space = spaces.Box(low=0, high=self.grid_size-1, shape=(2,), dtype=int)  # [x, y]
-        self.state = np.array([0, 0])  # Startposition oben links
+        self.observation_space = spaces.Box(low=0, high=self.grid_size-1, shape=(2,), dtype=np.int32)  # [x, y]
+        self.state = np.array([0, 0], dtype=np.int32)  # Startposition oben links
         self.resources = {(1, 1), (3, 2), (4, 4)}  # Ressourcenpunkte
         self.collected = set()
         self.max_steps = 50
         self.steps = 0
         self.config = config
 
-    def reset(self, seed=None, options=None):
-        self.state = np.array([0, 0])
+    def reset(self, *, seed=None, options=None):
+        super().reset(seed=seed)
+        self.state = np.array([0, 0], dtype=np.int32)
         self.collected = set()
         self.steps = 0
         return self.state.copy(), {}
 
     def step(self, action):
         x, y = self.state
+        # Bewegung: 0=hoch, 1=runter, 2=links, 3=rechts
         if action == 0 and y > 0:
             y -= 1
         elif action == 1 and y < self.grid_size-1:
@@ -36,14 +38,16 @@ class RpgEnv(gym.Env):
             x -= 1
         elif action == 3 and x < self.grid_size-1:
             x += 1
-        self.state = np.array([x, y])
+        self.state = np.array([x, y], dtype=np.int32)
         self.steps += 1
         reward = 0
         done = False
         info = {}
-        if tuple(self.state) in self.resources and tuple(self.state) not in self.collected:
-            self.collected.add(tuple(self.state))
-            reward = 10
+        # Sammel-Logik: Ressourcen werden nur gesammelt, wenn Agent exakt auf dem Punkt steht
+        for res in self.resources:
+            if (x, y) == res and res not in self.collected:
+                self.collected.add(res)
+                reward += 10
         if len(self.collected) == len(self.resources):
             done = True
             info["success"] = True

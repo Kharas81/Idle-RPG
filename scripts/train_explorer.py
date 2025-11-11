@@ -12,14 +12,20 @@ class ExplorerAgent:
         self.env = env
 
     def act(self, obs):
-        # Systematisch: erst Zeile ablaufen, dann nächste
+        # Gehe gezielt zu Ressourcenpunkten
         x, y = obs
-        if x < self.env.grid_size-1:
-            return 3  # rechts
-        elif y < self.env.grid_size-1:
-            return 1  # runter
-        else:
-            return 0  # hoch (bleibt stehen)
+        for rx, ry in sorted(self.env.resources):
+            if (rx, ry) not in self.env.collected:
+                # Gehe zuerst in x-Richtung, dann y
+                if x < rx:
+                    return 3  # rechts
+                elif x > rx:
+                    return 2  # links
+                elif y < ry:
+                    return 1  # runter
+                elif y > ry:
+                    return 0  # hoch
+        return 0  # bleibe stehen, wenn alles gesammelt
 
     def run(self):
         obs, info = self.env.reset()
