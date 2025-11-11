@@ -1,8 +1,6 @@
 """
 RpgEnv: Erweiterte RL-Umgebung für Navigation und Ressourcen
 """
-RpgEnv: Erweiterte RL-Umgebung für Navigation und Ressourcen
-"""
 import gymnasium as gym
 from gymnasium import spaces
 import numpy as np
