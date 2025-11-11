@@ -12,11 +12,12 @@ class ExplorerAgent:
         self.env = env
 
     def act(self, obs):
-        # Wähle immer die nächste noch nicht gesammelte Ressource als Ziel
+        # Nach jedem Schritt: Zielauswahl neu treffen
         x, y = obs
         targets = [res for res in self.env.resources if res not in self.env.collected]
         if not targets:
             return 0  # bleibe stehen
+        # Wähle das nächste Ziel, das noch nicht gesammelt ist
         rx, ry = targets[0]
         if x < rx:
             return 3  # rechts
@@ -26,6 +27,7 @@ class ExplorerAgent:
             return 1  # runter
         elif y > ry:
             return 0  # hoch
+        # Wenn Ziel erreicht, wähle im nächsten Schritt das nächste Ziel
         return 0
 
     def run(self):
@@ -36,8 +38,8 @@ class ExplorerAgent:
         while not done and steps < self.env.max_steps:
             action = self.act(obs)
             obs, reward, done, _, info = self.env.step(action)
-            if reward > 0:
-                collected += 1
+            # Nach jedem Schritt: Position und gesammelte Ressourcen prüfen
+            collected = len(self.env.collected)
             steps += 1
         return collected, steps, info
 
