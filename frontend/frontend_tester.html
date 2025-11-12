@@ -60,16 +60,16 @@
     </div>
     <div class="section panel">
         <div class="controls">
-            <button onclick="callApi('GET', '/state')">GET /state</button>
-            <button onclick="callApi('POST', '/tick')">POST /tick</button>
-            <button onclick="callApi('POST', '/reset')">POST /reset</button>
-            <button onclick="callApi('POST', '/action/craft')">POST /action/craft</button>
+            <button onclick="callApi('GET', '/state')">Spielstand anzeigen</button>
+            <button onclick="callApi('POST', '/tick')">Runde ausführen</button>
+            <button onclick="callApi('POST', '/reset')">Spiel neu starten</button>
+            <button onclick="callApi('POST', '/action/craft')">Item herstellen</button>
         </div>
         <div style="margin-top:0.6em">
             <strong>Training (falls Backend vorhanden)</strong>
             <div style="margin-top:0.4em">
-                <button onclick="trainAgent('fighter')">Train Fighter</button>
-                <button onclick="trainAgent('explorer')">Train Explorer</button>
+                <button onclick="trainAgent('fighter')">Kämpfer trainieren</button>
+                <button onclick="trainAgent('explorer')">Entdecker trainieren</button>
             </div>
             <small style="color:#666; display:block; margin-top:0.4em">Hinweis: Backend-Endpoints <code>/train/{agent}</code> werden benötigt, sonst erscheint eine Fehlermeldung.</small>
         </div>
