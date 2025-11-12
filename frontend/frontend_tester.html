@@ -5,44 +5,125 @@
     <title>Idle RPG Frontend Tester</title>
     <style>
         body { font-family: sans-serif; margin: 2em; }
-        .section { margin-bottom: 2em; }
-        label, input { font-size: 1em; }
-        button { margin: 0.5em; padding: 0.5em 1em; font-size: 1em; }
-        #output { margin-top: 1em; white-space: pre; background: #f4f4f4; padding: 1em; border-radius: 5px; }
+        .section { margin-bottom: 1.2em; }
+        label, input, select { font-size: 1em; }
+        button { margin: 0.4em; padding: 0.45em 0.9em; font-size: 0.95em; }
+        #output { margin-top: 1em; white-space: pre; background: #f4f4f4; padding: 1em; border-radius: 5px; max-height: 320px; overflow:auto; }
         #status { font-weight: bold; margin-left: 1em; }
         .status-ok { color: green; }
         .status-fail { color: red; }
+        .controls { display:flex; gap:1em; align-items:center; flex-wrap:wrap }
+        .panel { border: 1px solid #ddd; padding: 0.8em; border-radius:6px; background: #fff; }
+        #help { font-size: 0.95em; color:#333; max-width:800px }
+        #log { background:#111; color:#0f0; padding:0.8em; border-radius:6px; font-family:monospace; white-space:pre-wrap; max-height:200px; overflow:auto }
     </style>
 </head>
 <body>
     <h1>Idle RPG Frontend Tester</h1>
-    <div class="section">
-        <label>API-URL: <input id="apiurl" value="http://localhost:8000" size="40" oninput="checkApiStatus()"></label>
-        <span id="status" class="status-fail">Nicht verbunden</span>
-        <button onclick="checkApiStatus()">Verbindung testen</button>
+    <div class="section panel">
+        <div class="controls">
+            <label>API-URL: <input id="apiurl" value="http://localhost:8000" size="40" oninput="onApiUrlChange()"></label>
+            <button onclick="checkApiStatus()">Verbindung testen</button>
+            <span id="status" class="status-fail">Nicht verbunden</span>
+        </div>
+        <div style="margin-top:0.5em"><small>Tipp: Trage hier die <strong>ngrok</strong>-URL ein (z.B. https://xxxxxx.ngrok.io) und klicke auf "Verbindung testen".</small></div>
     </div>
-    <div class="section">
-        <button onclick="callApi('GET', '/state')">GET /state</button>
-        <button onclick="callApi('POST', '/tick')">POST /tick</button>
-        <button onclick="callApi('POST', '/reset')">POST /reset</button>
+    <div class="section panel">
+        <div class="controls">
+            <label for="hero">Heldenklasse wählen:
+                <select id="hero">
+                    <option value="Krieger">Krieger</option>
+                    <option value="Magier">Magier</option>
+                    <option value="Schurke">Schurke</option>
+                    <option value="Jäger">Jäger</option>
+                </select>
+            </label>
+            <button onclick="startGame()">Spiel starten</button>
+            <label>Agenten-Modus:
+                <select id="mode" onchange="toggleMode(this.value)">
+                    <option value="auto">Auto (Manager steuert)</option>
+                    <option value="manual">Manuell (du übernimmst)</option>
+                </select>
+            </label>
+        </div>
+        <div style="margin-top:0.6em">
+            <label>Manueller Agent Override:
+                <select id="manualAgent">
+                    <option value="">--kein Override--</option>
+                    <option value="Explorer">Explorer (Sammeln)</option>
+                    <option value="Fighter">Fighter (Kampf)</option>
+                </select>
+            </label>
+            <button onclick="setActiveAgent()">Setze aktiven Agenten</button>
+            <button onclick="clearOverride()">Override löschen</button>
+        </div>
     </div>
-    <div id="output">Wähle eine Aktion…</div>
+    <div class="section panel">
+        <div class="controls">
+            <button onclick="callApi('GET', '/state')">GET /state</button>
+            <button onclick="callApi('POST', '/tick')">POST /tick</button>
+            <button onclick="callApi('POST', '/reset')">POST /reset</button>
+            <button onclick="callApi('POST', '/action/craft')">POST /action/craft</button>
+        </div>
+        <div style="margin-top:0.6em">
+            <strong>Training (falls Backend vorhanden)</strong>
+            <div style="margin-top:0.4em">
+                <button onclick="trainAgent('fighter')">Train Fighter</button>
+                <button onclick="trainAgent('explorer')">Train Explorer</button>
+            </div>
+            <small style="color:#666; display:block; margin-top:0.4em">Hinweis: Backend-Endpoints <code>/train/{agent}</code> werden benötigt, sonst erscheint eine Fehlermeldung.</small>
+        </div>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 360px; gap:1em; align-items:start">
+        <div id="output" class="panel">Wähle eine Aktion…</div>
+        <div>
+            <div class="panel">
+                <h3 style="margin-top:0">Kurzanleitung</h3>
+                <div id="help">Trage die API-URL (ngrok) ein, wähle eine Heldenklasse und klicke auf <strong>Spiel starten</strong>.<br>Mit dem Modus-Schalter kannst du den Manager automatisch entscheiden lassen oder manuell einen Agenten aktivieren. Trainings-Buttons starten Trainingsläufe, falls das Backend dies unterstützt.</div>
+            </div>
+            <div style="height:0.6em"></div>
+            <div class="panel">
+                <h3 style="margin-top:0">Log</h3>
+                <div id="log">keine Einträge</div>
+                <div style="margin-top:0.6em"><button onclick="clearLog()">Log löschen</button></div>
+            </div>
+        </div>
+    </div>
     <script>
-    async function callApi(method, path) {
-        const url = document.getElementById('apiurl').value + path;
+    async function callApi(method, path, body=null) {
+        const base = (document.getElementById('apiurl').value || '').trim();
+        const url = base + path;
         let resp, data;
+        let options = { method };
+        if (body) {
+            options.headers = { 'Content-Type': 'application/json' };
+            options.body = JSON.stringify(body);
+        }
         try {
-            resp = await fetch(url, { method });
+            resp = await fetch(url, options);
             data = await resp.json();
             setStatus(true);
+            pushLog(`${method} ${path} -> OK`);
         } catch (e) {
             data = { error: e.toString() };
             setStatus(false);
+            pushLog(`${method} ${path} -> ERROR: ${e.toString()}`);
         }
         document.getElementById('output').textContent = JSON.stringify(data, null, 2);
     }
+    function startGame() {
+        const hero = document.getElementById('hero').value;
+        // Annahme: /reset akzeptiert Heldenklasse als Payload
+        callApi('POST', '/reset', { hero_class: hero });
+        pushLog(`Spiel gestartet mit Heldenklasse: ${hero}`);
+    }
+    function onApiUrlChange(){
+        const url = document.getElementById('apiurl').value;
+        localStorage.setItem('idle_apiurl', url);
+        // do not spam checks while typing
+    }
     async function checkApiStatus() {
-        const url = document.getElementById('apiurl').value + '/state';
+        const url = (document.getElementById('apiurl').value || '').trim() + '/state';
         let ok = false;
         try {
             const resp = await fetch(url);
@@ -62,7 +143,47 @@
             status.className = 'status-fail';
         }
     }
-    window.onload = checkApiStatus;
+    function pushLog(msg){
+        const el = document.getElementById('log');
+        const now = new Date().toLocaleTimeString();
+        if(!el.dataset.first){ el.textContent=''; el.dataset.first = '1'; }
+        el.textContent = `${now} - ${msg}\n` + el.textContent;
+    }
+    function clearLog(){ document.getElementById('log').textContent='keine Einträge'; }
+    function trainAgent(name){
+        const api = document.getElementById('apiurl').value;
+        if(!api){ alert('Bitte API-URL eintragen'); return }
+        callApi('POST', `/train/${name}`);
+        pushLog(`Trainingsstart angefragt: ${name}`);
+    }
+    function toggleMode(val){
+        // send to backend if supported
+        callApi('POST', '/manager/mode', { mode: val });
+        pushLog(`Agenten-Modus gesetzt: ${val}`);
+    }
+    function setActiveAgent(){
+        const agent = document.getElementById('manualAgent').value;
+        if(!agent){ alert('Wähle zuerst einen Agenten aus'); return }
+        callApi('POST', '/manager/override', { agent });
+        pushLog(`Manueller Agent override: ${agent}`);
+    }
+    function clearOverride(){
+        callApi('POST', '/manager/override', { agent: null });
+        document.getElementById('manualAgent').value = '';
+        pushLog('Agent override gelöscht');
+    }
+    // restore saved API URL and hero selection
+    window.onload = function(){
+        const saved = localStorage.getItem('idle_apiurl');
+        if(saved) document.getElementById('apiurl').value = saved;
+        const savedHero = localStorage.getItem('idle_hero');
+        if(savedHero) document.getElementById('hero').value = savedHero;
+        checkApiStatus();
+    }
+    // save hero selection
+    document.getElementById('hero').addEventListener('change', ()=>{
+        localStorage.setItem('idle_hero', document.getElementById('hero').value);
+    });
     </script>
 </body>
 </html>

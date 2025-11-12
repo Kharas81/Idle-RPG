@@ -15,6 +15,7 @@ from rpg_project.src.api.reputation import router as reputation_router
 from rpg_project.src.api.dungeon import router as dungeon_router
 from rpg_project.src.api.automation import router as automation_router
 from rpg_project.src.api.session import router as session_router
+from rpg_project.src.api.manager import router as manager_router
 
 app = FastAPI()
 
@@ -27,5 +28,5 @@ for mod in (movement, battle, inventory, tickreset):
 	mod.game_state = game_state
 
 # Registriere alle modularisierten Router
-for router in (movement_router, battle_router, inventory_router, tickreset_router, game_state_router, reputation_router, dungeon_router, automation_router, session_router):
+for router in (movement_router, battle_router, inventory_router, tickreset_router, game_state_router, reputation_router, dungeon_router, automation_router, session_router, manager_router):
 	app.include_router(router, prefix="/api")

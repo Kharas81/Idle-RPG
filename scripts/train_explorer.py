@@ -19,6 +19,12 @@ class ExplorerAgent:
             return 0  # bleibe stehen
         # Wähle das nächste Ziel, das noch nicht gesammelt ist
         rx, ry = targets[0]
+        if (x, y) == (rx, ry):
+            # Ziel erreicht, im nächsten Schritt neues Ziel wählen
+            targets = [res for res in self.env.resources if res not in self.env.collected]
+            if not targets:
+                return 0
+            rx, ry = targets[0]
         if x < rx:
             return 3  # rechts
         elif x > rx:
@@ -27,7 +33,6 @@ class ExplorerAgent:
             return 1  # runter
         elif y > ry:
             return 0  # hoch
-        # Wenn Ziel erreicht, wähle im nächsten Schritt das nächste Ziel
         return 0
 
     def run(self):

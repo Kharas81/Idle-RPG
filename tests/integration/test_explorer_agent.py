@@ -27,12 +27,24 @@ class ExplorerAgent:
         self.env = env
     def act(self, obs):
         x, y = obs
-        if x < self.env.grid_size-1:
-            return 3
-        elif y < self.env.grid_size-1:
-            return 1
-        else:
-            return 0
+        targets = [res for res in self.env.resources if res not in self.env.collected]
+        if not targets:
+            return 0  # bleibe stehen
+        rx, ry = targets[0]
+        if (x, y) == (rx, ry):
+            targets = [res for res in self.env.resources if res not in self.env.collected]
+            if not targets:
+                return 0
+            rx, ry = targets[0]
+        if x < rx:
+            return 3  # rechts
+        elif x > rx:
+            return 2  # links
+        elif y < ry:
+            return 1  # runter
+        elif y > ry:
+            return 0  # hoch
+        return 0
     def run(self):
         obs, info = self.env.reset()
         done = False
