@@ -1,0 +1,7 @@
+gymnasium
+fastapi
+uvicorn
+ngrok
+pytest
+numpy
+pydantic
